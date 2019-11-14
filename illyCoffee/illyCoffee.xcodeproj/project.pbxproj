@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		73A8C2C5237CF3D4002BA970 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */; };
-		73A8C2C9237CF3D4002BA970 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2C8237CF3D4002BA970 /* ViewController.swift */; };
+		73A8C2C9237CF3D4002BA970 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2C8237CF3D4002BA970 /* EmptyViewController.swift */; };
 		73A8C2CE237CF3FE002BA970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2CD237CF3FE002BA970 /* Assets.xcassets */; };
 		73A8C2D1237CF3FE002BA970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2CF237CF3FE002BA970 /* LaunchScreen.storyboard */; };
 		73A8C2DC237CF3FF002BA970 /* illyCoffeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2DB237CF3FF002BA970 /* illyCoffeeTests.swift */; };
+		73A8C2E7237CF64F002BA970 /* FeatureTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2E6237CF64F002BA970 /* FeatureTabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,13 +28,14 @@
 /* Begin PBXFileReference section */
 		73A8C2C1237CF3D4002BA970 /* illyCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = illyCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		73A8C2C8237CF3D4002BA970 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		73A8C2C8237CF3D4002BA970 /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		73A8C2CD237CF3FE002BA970 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73A8C2D0237CF3FE002BA970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73A8C2D2237CF3FE002BA970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73A8C2D7237CF3FF002BA970 /* illyCoffeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = illyCoffeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A8C2DB237CF3FF002BA970 /* illyCoffeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = illyCoffeeTests.swift; sourceTree = "<group>"; };
 		73A8C2DD237CF3FF002BA970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73A8C2E6237CF64F002BA970 /* FeatureTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */,
-				73A8C2C8237CF3D4002BA970 /* ViewController.swift */,
-				73A8C2CD237CF3FE002BA970 /* Assets.xcassets */,
-				73A8C2CF237CF3FE002BA970 /* LaunchScreen.storyboard */,
-				73A8C2D2237CF3FE002BA970 /* Info.plist */,
+				73A8C2EA237CF6C4002BA970 /* Features */,
+				73A8C2E9237CF6B6002BA970 /* SupportingFiles */,
+				73A8C2E8237CF6AD002BA970 /* Navigation */,
 			);
 			path = illyCoffee;
 			sourceTree = "<group>";
@@ -91,6 +92,32 @@
 				73A8C2DD237CF3FF002BA970 /* Info.plist */,
 			);
 			path = illyCoffeeTests;
+			sourceTree = "<group>";
+		};
+		73A8C2E8237CF6AD002BA970 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				73A8C2E6237CF64F002BA970 /* FeatureTabViewController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		73A8C2E9237CF6B6002BA970 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				73A8C2CD237CF3FE002BA970 /* Assets.xcassets */,
+				73A8C2CF237CF3FE002BA970 /* LaunchScreen.storyboard */,
+				73A8C2D2237CF3FE002BA970 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		73A8C2EA237CF6C4002BA970 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				73A8C2C8237CF3D4002BA970 /* EmptyViewController.swift */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +220,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73A8C2C9237CF3D4002BA970 /* ViewController.swift in Sources */,
+				73A8C2C9237CF3D4002BA970 /* EmptyViewController.swift in Sources */,
+				73A8C2E7237CF64F002BA970 /* FeatureTabViewController.swift in Sources */,
 				73A8C2C5237CF3D4002BA970 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,7 +306,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -332,7 +360,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -347,12 +375,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = illyCoffee/Info.plist;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = "$(SRCROOT)/illyCoffee/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexander.lorkowski.illyCoffee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -365,12 +395,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = illyCoffee/Info.plist;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = "$(SRCROOT)/illyCoffee/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexander.lorkowski.illyCoffee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
