@@ -32,22 +32,26 @@ extension CoffeeListViewController {
 // MARK: - UITableViewDataSource
 extension CoffeeListViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return self.coffeeListViewModel.numberOfSections
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.coffeeListViewModel.numberOfCoffees
+        return self.coffeeListViewModel.numberOfCoffees(in: section)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = CoffeeTableViewCell.dequeue(from: tableView, for: indexPath)
-        cell.configure(with: self.coffeeListViewModel.coffeeList[indexPath.row])
+        cell.configure(with: self.coffeeListViewModel.getCoffee(for: indexPath))
         cell.backgroundColor = .white
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8
         cell.clipsToBounds = true
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.coffeeListViewModel.getCoffeeCategory(for: section)
     }
 }
 
@@ -57,9 +61,13 @@ extension CoffeeListViewController {
         return 50
     }
 
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.isSelected = false
-        let coffee = self.coffeeListViewModel.coffeeList[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let coffee = self.coffeeListViewModel.getCoffee(for: indexPath) else { return }
         let coffeeDetailViewController = CoffeeDetailViewController()
         coffeeDetailViewController.coffeeDetailViewModel = CoffeeDetailViewModel(with: coffee)
         self.navigationController?.pushViewController(coffeeDetailViewController, animated: true)
