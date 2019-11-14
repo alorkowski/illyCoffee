@@ -13,6 +13,11 @@ class CoffeeTableViewCell: UITableViewCell, ProgrammaticView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.contentView.frame = self.contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
+    }
 }
 
 // MARK: - Setup functions
@@ -23,7 +28,7 @@ extension CoffeeTableViewCell {
         self.coffeeImage.translatesAutoresizingMaskIntoConstraints = false
         self.coffeeImage.topAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.topAnchor).isActive = true
         self.coffeeImage.bottomAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        self.coffeeImage.leadingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        self.coffeeImage.leadingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
         self.coffeeImage.widthAnchor.constraint(equalToConstant: 50).isActive = true
     }
 
@@ -32,7 +37,7 @@ extension CoffeeTableViewCell {
         self.coffeeLabel.translatesAutoresizingMaskIntoConstraints = false
         self.coffeeLabel.topAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.topAnchor).isActive = true
         self.coffeeLabel.bottomAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        self.coffeeLabel.leadingAnchor.constraint(equalTo: self.coffeeImage.trailingAnchor).isActive = true
+        self.coffeeLabel.leadingAnchor.constraint(equalTo: self.coffeeImage.trailingAnchor, constant: 8).isActive = true
         self.coffeeLabel.trailingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
 }

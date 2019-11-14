@@ -20,8 +20,8 @@ extension CoffeeLabelTableViewCell {
         self.coffeeLabel.translatesAutoresizingMaskIntoConstraints = false
         self.coffeeLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor).isActive = true
         self.coffeeLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
-        self.coffeeLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor).isActive = true
-        self.coffeeLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
+        self.coffeeLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 8).isActive = true
+        self.coffeeLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8).isActive = true
         self.coffeeLabel.numberOfLines = 0
         self.coffeeLabel.textAlignment = .left
     }
