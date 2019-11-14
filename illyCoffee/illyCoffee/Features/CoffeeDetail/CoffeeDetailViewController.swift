@@ -42,16 +42,16 @@ extension CoffeeDetailViewController {
 // MARK: - UITableViewDataSource
 extension CoffeeDetailViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0:
+        case 0, 1:
             return 1
-        case 1:
-            return self.coffeeDetailViewModel.numberOfIngredients
         case 2:
+            return self.coffeeDetailViewModel.numberOfIngredients
+        case 3:
             return self.coffeeDetailViewModel.numberOfPreparations
         default:
             return 1
@@ -60,9 +60,9 @@ extension CoffeeDetailViewController {
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
-        case 1:
-            return "Ingredients"
         case 2:
+            return "Ingredients"
+        case 3:
             return "Preparation"
         default:
             return nil
@@ -74,14 +74,21 @@ extension CoffeeDetailViewController {
         case 0:
             let cell = CoffeeImageTableViewCell.dequeue(from: tableView, for: indexPath)
             cell.configure(with: self.coffeeDetailViewModel.coffee)
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
         case 1:
             let cell = CoffeeLabelTableViewCell.dequeue(from: tableView, for: indexPath)
-            cell.configure(with: self.coffeeDetailViewModel.coffee.ingredients[indexPath.row])
+            cell.configure(with: self.coffeeDetailViewModel.coffee.description)
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
         case 2:
             let cell = CoffeeLabelTableViewCell.dequeue(from: tableView, for: indexPath)
+            cell.configure(with: self.coffeeDetailViewModel.coffee.ingredients[indexPath.row])
+            return cell
+        case 3:
+            let cell = CoffeeLabelTableViewCell.dequeue(from: tableView, for: indexPath)
             cell.configure(with: self.coffeeDetailViewModel.coffee.preparation[indexPath.row])
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
         default:
             return UITableViewCell()
@@ -93,7 +100,7 @@ extension CoffeeDetailViewController {
 extension CoffeeDetailViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
-        case 1, 2:
+        case 2, 3:
             return 44
         default:
             return 0
@@ -102,8 +109,10 @@ extension CoffeeDetailViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
-        case 0, 2:
+        case 0, 1, 3:
             return UITableView.automaticDimension
+        case 2:
+            return max(44, UITableView.automaticDimension)
         default:
             return 44
         }

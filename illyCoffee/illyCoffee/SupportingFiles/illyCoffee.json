@@ -91,10 +91,10 @@
             "4 ice cubes"
         ],
         "preparation": [
-            "1. Cool the 150 ml glass beaker.",
-            "2. Prepare two espresso in the cappuccino cup.",
-            "3. In the blender glass put the ice, the liquid sugar and the two expressed, which you will add as the last ingredient. Blend for up to 5 seconds.",
-            "4. Pour the preparation into the glass and serve."
+            "1. Chill an 8 oz (150 ml) glass.",
+            "2. Prepare 2 espresso into a cappuccino cup.",
+            "3. In the mixing glass, mix the ice, the liquid sugar and the 2 espresso with the mixing spoon, which you will add as the last ingredient. Blend for up to 5 seconds.",
+            "4. Pour the mixture into the glass and serve."
         ]
     },
     {   "category": "Specialty Cold Drinks",
@@ -108,14 +108,14 @@
             "Ice cubes"
         ],
         "preparation": [
-            "1. Chill an 8 oz (240 ml) glass",
-            "2. Prepare 2 espresso into a cappuccino cup",
+            "1. Chill an 8 oz (240 ml) glass.",
+            "2. Prepare 2 espresso into a cappuccino cup.",
             "3. In the mixing glass, mix the water, ice cubes, liquid sugar and the 2 espresso with the mixing spoon, which you will add as the last ingredient.",
             "4. Pour the mixture into the glass, filtering the ice with the strainer, and serve."
         ]
     },
     {   "category": "Specialty Cold Drinks",
-        "name": "affogato",
+        "name": "Affogato",
         "urlAlias": "espresso-ice-cream-affogato",
         "description": "The affogato immediately spreads good cheer. This delectable espresso dessert features ice cream and a rich, smooth covering of espresso.",
         "ingredients": [
