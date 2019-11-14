@@ -21,6 +21,8 @@ extension CoffeeDetailViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
                                                                  target: self,
                                                                  action: #selector(saveCoffeeToFavorites))
+        self.navigationItem.leftBarButtonItem?.tintColor = .white
+        self.navigationItem.rightBarButtonItem?.tintColor = .white
     }
 
     private func setupTableView() {
