@@ -130,5 +130,83 @@
             "3. Add whip cream (optional) and use as garnish.",
             "4. Decorate with a little cocoa powder and serve."
         ]
+    },
+    {   "category": "Coffee Cocktails",
+        "name": "Amore",
+        "urlAlias": "amore-coffee",
+        "description": "An encounter between a double espresso and the sweet personality of amaretto liqueur, including a dense layer of shaken cream. It is no coincidence that this hot, intense, aromatic drink, with a romantic soul, is called Amore.",
+        "ingredients": [
+            "Approx. 3 tbsp (45-50 ml) espresso",
+            "Approx. 3 tbsp (40 ml) amaretto liqueur",
+            "Approx. 3 tbsp (40 ml)",
+            "Fresh heavy cream",
+            "Cane sugar",
+            "2 coffee beans"
+        ],
+        "preparation": [
+            "1. Prepare two espresso in a cappuccino cup.",
+            "2. Pour the liqueur into the glass and heat it with your espresso machine’s steam wand. Take care to not overheat it, as this would change its aromas.",
+            "3. Add the espresso to the liqueur.",
+            "4. Pour the cream, which should be very cold, into the mini shaker. Shake until the mixture becomes quite dense.",
+            "5. Gently rest the cream on the surface of the cocktail, making it run down the back of the mixing spoon so that it stays on the surface.",
+            "6. Garnish with two coffee beans and a dusting of cane sugar, and serve."
+        ]
+    },
+    {   "category": "Coffee Cocktails",
+        "name": "Irish Coffee",
+        "urlAlias": "irish-coffee",
+        "description": "A classic born in Ireland and celebrated all over the world for its combination of coffee and Irish whiskey. A delicate layer of thick but not overly-whipped cream tempers the strength of this cocktail, and completes its perfection.",
+        "ingredients": [
+            "2 shots illy espresso",
+            "Approx. 3 tbsp (40 ml) Irish whiskey",
+            "1 tsp (5 g) cane sugar",
+            "Approx. 3 tbsp (40 ml) fresh heavy cream",
+            "Unsweetened cocoa powder",
+            "2 coffee beans"
+        ],
+        "preparation": [
+            "1. Prepare two espresso into a cappuccino cup.",
+            "2. Pour the whiskey and the cane sugar into a serving glass, heating it with the steam wand of your espresso machine. Take care not to overheat it as this will alter the taste of the whiskey.",
+            "3. Add the coffee to the glass of warmed whiskey.",
+            "4. Shake the cream, which should be very cold, in the mini shaker until it becomes quite thick.",
+            "5. Layer the cream on the cocktail, gently pouring it over the back of a mixing spoon so that it floats on top of the coffee.",
+            "6. Decorate with a dusting of cocoa powder and garnish with two coffee beans before serving."
+        ]
+    },
+    {   "category": "Coffee Cocktails",
+        "name": "Vodka Espresso",
+        "urlAlias": "vodka-espresso",
+        "description": "Vodka in this cold cocktail meets espresso: the two discover they like each other a lot and together they willingly abandon themselves to the creaminess of the coffee liqueur, creating a perfect harmony of flavors.",
+        "ingredients": [
+            "25 ml of espresso",
+            "10 ml of liquid sugar",
+            "10 ml of coffee liqueur",
+            "20 ml of white vodka",
+            "Ice cubes"
+        ],
+        "preparation": [
+            "1. Prepare the espresso in the cup.",
+            "2. Add the liquid sugar, coffee liqueur, white vodka and, finally, the espresso. Cool by mixing the ingredients with the mixing spoon.",
+            "3. Pour the mixture into the glass together with some ice cubes and serve."
+        ]
+    },
+    {   "category": "Coffee Cocktails",
+        "name": "Espresso Delight",
+        "urlAlias": "espresso-delight",
+        "description": "With its pure white decadence, the shaken cream hides under a delectable layer of chocolate and coffee, to which a touch of alcohol adds a cheeky touch. The unmistakeable taste of espresso is enhanced by the aromatic notes of liqueur that accompanies it.",
+        "ingredients": [
+            "1 TBSP plus 2 TSP (25 ml) of espresso",
+            "2 TBSP (30 ml) of hot chocolate",
+            "Liquid sugar",
+            "1 TBSP plus 1 TSP (20 ml) of coffee liqueur",
+            "Approx. 3 TBSP (40 ml) of heavy cream"
+        ],
+        "preparation": [
+            "1. Prepare the espresso in a small cup.",
+            "2. Prepare the hot chocolate in the pitcher.  Sweeten it with some liquid sugar to taste.",
+            "3. Pour the hot chocolate, espresso, and liqueur into a glass",
+            "4. Shake the cream in a shaker, which should be very cold, until it becomes quite thick.",
+            "5. Gently rest the cream on the surface of the cocktail, making it run down the back of the mixing spoon, and serve."
+        ]
     }
 ]
