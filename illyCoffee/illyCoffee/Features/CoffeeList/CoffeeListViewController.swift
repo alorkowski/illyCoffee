@@ -15,8 +15,8 @@ final class CoffeeListViewController: UITableViewController {
 // MARK: - Setup functions
 extension CoffeeListViewController {
     private func setupNavigationBar() {
-        self.navigationController?.navigationBar.backgroundColor = .white
-        self.navigationController?.navigationBar.barTintColor = .white
+        self.navigationController?.navigationBar.backgroundColor = .systemRed
+        self.navigationController?.navigationBar.barTintColor = .systemRed
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.isOpaque = true
     }

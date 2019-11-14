@@ -1,5 +1,5 @@
 [
-    {   "category": "Specialty Cold Drinks",
+    {   "category": "Cold Specialty Drinks",
         "name": "Espresso Frappe",
         "urlAlias": "espresso-frappe",
         "description": "A delicious drink that conquers at first glance: an inviting, velvety iced foam prepared on the spot. This milk-free beverage is a light, soft version of the frappe made with just espresso, a few ice cubes and a little sugar",
@@ -15,7 +15,7 @@
             "4. Pour into the glass, filtering the ice with the strainer. Serve."
         ]
     },
-    {   "category": "Specialty Cold Drinks",
+    {   "category": "Cold Specialty Drinks",
         "name": "Greek Cappuccino",
         "urlAlias": "greek-cold-cappuccino",
         "description": "A shower of crushed ice makes this drink a lighter version of a traditional iced cappuccino.",
@@ -32,7 +32,7 @@
             "4. Blend for no more than 5 seconds and pour into the glass"
         ]
     },
-    {   "category": "Specialty Cold Drinks",
+    {   "category": "Cold Specialty Drinks",
         "name": "Freddo Espresso Shaken",
         "urlAlias": "freddo-espresso-shaken",
         "description": "This recipe is a cold and refreshing espresso drink, perfect from those warm summer days. Prepared in a shaker with sugar and a few ice cubes, the espresso acquires an irresistible soft cream. A delight to be sipped during a relaxing break.  Enjoy with a biscotti or two.",
@@ -48,7 +48,7 @@
             "4. Shake vigorously and pour into the chilled glass, filtering the ice with a strainer."
         ]
     },
-    {   "category": "Specialty Cold Drinks",
+    {   "category": "Cold Specialty Drinks",
         "name": "Tiramisu Espresso",
         "urlAlias": "tiramisu-espresso",
         "description": "A drinkable version of a favorite Italian dessert, perfect at the end of a meal or as a rich and tasty treat.",
@@ -65,7 +65,7 @@
             "4. Pour into a decorative glass and top with a dusting of cocoa powder"
         ]
     },
-    {   "category": "Specialty Cold Drinks",
+    {   "category": "Cold Specialty Drinks",
         "name": "Light Melting Espresso",
         "urlAlias": "light-melting-espresso",
         "description": "A combination of coffee and chocolate with a delicate touch of milk, giving rise to a cold, light froth with an unexpected warm espresso heart.",
@@ -81,7 +81,7 @@
             "3. Pour the milk and cocoa frappe into the 2/3 cup (150 ml) glass and add the sweetened espresso, pouring it into the center of the frappe. Decorate with a light dusting of cocoa powder."
         ]
     },
-    {   "category": "Specialty Cold Drinks",
+    {   "category": "Cold Specialty Drinks",
         "name": "Espresso Freddo Greco",
         "urlAlias": "caffe-freddo-greco",
         "description": "It looks like the classic shaken double this cold espresso, which makes it even more intriguing. The king of classics meets ice, to give the palate an intense and vigorous pleasure.",
@@ -97,7 +97,7 @@
             "4. Pour the mixture into the glass and serve."
         ]
     },
-    {   "category": "Specialty Cold Drinks",
+    {   "category": "Cold Specialty Drinks",
         "name": "Espresso Freddo",
         "urlAlias": "espresso-freddo",
         "description": "A cold variation of excellence of the most classic coffee, espresso. ",
@@ -114,7 +114,7 @@
             "4. Pour the mixture into the glass, filtering the ice with the strainer, and serve."
         ]
     },
-    {   "category": "Specialty Cold Drinks",
+    {   "category": "Cold Specialty Drinks",
         "name": "Affogato",
         "urlAlias": "espresso-ice-cream-affogato",
         "description": "The affogato immediately spreads good cheer. This delectable espresso dessert features ice cream and a rich, smooth covering of espresso.",
@@ -207,6 +207,172 @@
             "3. Pour the hot chocolate, espresso, and liqueur into a glass",
             "4. Shake the cream in a shaker, which should be very cold, until it becomes quite thick.",
             "5. Gently rest the cream on the surface of the cocktail, making it run down the back of the mixing spoon, and serve."
+        ]
+    },
+    {   "category": "Classic Coffees",
+        "name": "Americano",
+        "urlAlias": "americano-coffee",
+        "description": "Even the Italian espresso can be tempted by the American dream. When a bigger cup of coffee is in order, espresso teams up with boiling water, transforming into a drink to be enjoyed over time, and sipped at any time of day.",
+        "ingredients": [
+            "1 tbsp. plus 2 tsp. (25 ml) espresso",
+            "Hot water"
+        ],
+        "preparation": [
+            "1. Prepare the espresso in a small cup",
+            "2. Fill a cappuccino cup with hot water (about 190 F, or 90 C) and add as much of the espresso as you prefer. Serve"
+        ]
+    },
+    {   "category": "Classic Coffees",
+        "name": "Double Espresso",
+        "urlAlias": "double-espresso",
+        "description": "",
+        "ingredients": [
+            "40-50 ml espresso"
+        ],
+        "preparation": [
+            "Prepare two espresso in a cappuccino cup and serve."
+        ]
+    },
+    {   "category": "Classic Coffees",
+        "name": "Espresso Lungo",
+        "urlAlias": "lungo-coffee",
+        "description": "When it is slightly lengthened, espresso is a pleasure to be enjoyed slowly. Strong and passionate like a story, this coffee has a special way of unfolding in the cup, with an abundance of unique qualities.",
+        "ingredients": [
+            "1/4 oz (7 g) ground espresso coffee, pod or capsule",
+            "Hot water"
+        ],
+        "preparation": [
+            "1. You can follow the classic method, using your espresso machine as usual with a capsule, pod or ground coffee. You will have to make sure however, to extend the extraction to 35 seconds: this way, you will have about 30 ml (2 tbsp) of coffee in the cup.",
+            "2. Alternatively, first prepare a classic espresso; then, right in the espresso cup, add however much hot water you prefer using the pitcher."
+        ]
+    },
+    {   "category": "Classics with Milk",
+        "name": "Mugaccino",
+        "urlAlias": "mugaccino",
+        "description": "Less is more doesn’t apply to the Mugaccino, a maxi-version of the caffelatte that likes to think big. Served in a coffee mug, this is a double espresso with as much foam as you like for a full cup of satisfaction.",
+        "ingredients": [
+            "2 shots illy espresso",
+            "2/3 cup (150 ml) fresh whole milk"
+        ],
+        "preparation": [
+            "1. Prepare two espresso into a cup or pour pitcher and then add to a coffee mug.",
+            "2. Froth the milk in a steaming pitcher, using the steam wand of your espresso machine.",
+            "3. Finish by pouring the frothed milk on top of the double espresso and serve."
+        ]
+    },
+    {   "category": "Classics with Milk",
+        "name": "Latte",
+        "urlAlias": "latte",
+        "description": "A coffeehouse favorite that blends deliciously with flavored syrups.",
+        "ingredients": [
+            "2 shots illy espresso",
+            "1 cup whole milk (240 ml)"
+        ],
+        "preparation": [
+            "1. Prepare 2 shots of espresso into a small cup or pour pitcher",
+            "2. Pour into a serving glass",
+            "3. Steam and froth the milk in a steaming pitcher, taking care not to let it foam too much as it needs to stay on the liquid side",
+            "4. Pour the milk over coffee, holding back froth until glass is filled 1 inch (2.5 cm) from the top",
+            "5. Top with a thin layer of froth"
+        ]
+    },
+    {   "category": "Classics with Milk",
+        "name": "Latte Macchiato",
+        "urlAlias": "latte-macchiato",
+        "description": "A warm embrace between soft, foamy milk and the richness of espresso.",
+        "ingredients": [
+            "1 shot illy espresso",
+            "1/3 cup plus 2 tsp whole milk (90 ml)"
+        ],
+        "preparation": [
+            "1. Prepare the espresso in a small cup or pour pitcher",
+            "2. Foam the milk in a steaming pitcher, and pour it into a decorative glass",
+            "3. Add the espresso to the glass"
+        ]
+    },
+    {   "category": "Classics with Milk",
+        "name": "Macchiato",
+        "urlAlias": "macchiato",
+        "description": "This espresso gives into a delicate indulgence, making it the perfect choice to finish off a pleasant break or start out the day with an extra edge. The velvety foam is a short, exquisite prelude to the intense flavor of the coffee - the right balance between the power of espresso and the delicacy of milk.",
+        "ingredients": [
+            "1 tbsp plus 1 or 2 tsp (20-25 ml) espresso",
+            "Approx. 2 tbsp (28 ml) fresh whole milk"
+        ],
+        "preparation": [
+            "1. Prepare the espresso in a small cup.",
+            "2. Foam the milk in the pitcher, using your espresso machines steam wand.",
+            "3. Pour the foam onto the espresso, filling the cup almost to the brim."
+        ]
+    },
+    {   "category": "Hot Specialty Drinks",
+        "name": "Cappuccino Viennese",
+        "urlAlias": "cappuccino-viennese",
+        "description": "A traditional coffeehouse favorite marked by its generous whipped cream topping.",
+        "ingredients": [
+            "1 shot illy Espresso",
+            "Fresh cold whole milk",
+            "3 oz heavy cream (90 ml)",
+            "Cocoa powder"
+        ],
+        "preparation": [
+            "1. Prepare espresso directly into a cappuccino cup",
+            "2. Steam and froth the milk in a steaming pitcher using the steam wand of your espresso machine.",
+            "3. Pour milk directly over coffee until it is about 1/2 inch (1.5 cm) from the top.",
+            "4. Whip the heavy cream in a small bowl or mixing cup until it is thick.",
+            "5. Top the coffee with whipped cream and dust lightly with cocoa powder."
+        ]
+    },
+    {   "category": "Hot Specialty Drinks",
+        "name": "Chocolate Wave",
+        "urlAlias": "chocolate-wave",
+        "description": "An unusual contrast of temperatures in a delectable trio: coffee and chocolate make a show of their passion, while milk lends a cool foamy freshness as it crowns a warm, aromatic brew.",
+        "ingredients": [
+            "1 shot illy Espresso",
+            "1-1.5 tbsp hot chocolate (15-20 ml)",
+            "1 tbsp plus 1 tsp skim milk (20 ml)"
+        ],
+        "preparation": [
+            "Prepare the hot chocolate in the pitcher and pour it into the glass.",
+            "Prepare the Espresso directly into the same glass, adding it to the hot chocolate.",
+            "Foam the cold milk in the pitcher with the milk frother.",
+            "To finish, add the foam to the coffee and chocolate and serve."
+        ]
+    },
+    {   "category": "Hot Specialty Drinks",
+        "name": "Melting Snow",
+        "urlAlias": "melting-snow",
+        "description": "Together again, coffee, milk and cocoa enjoy themselves with new variations on the theme: here they create a hot, intense drink, sweetened by a touch of aromatic cane sugar and cooled with soft milk snow. The surprise this drink has up its sleeve is its unusual contrast between hot and cold.",
+        "ingredients": [
+            "1 tbsp. plus 1 or 2 tsp (20-25 ml) espresso",
+            "2 tsp (10 ml) liquid cane sugar",
+            "4 tbsp. (60 ml) fresh whole milk",
+            "approx 1/16 oz (3 g) unsweetened cocoa powder, plus some for dusting",
+            "2 tbsp (30 ml) skim milk"
+        ],
+        "preparation": [
+            "1. Prepare the Espresso in a small cup.",
+            "2. In the frothing pitcher, combine the liquid sugar, whole milk and approx 1/16 oz (3 g) of cocoa powder; heat it with your espresso machine's steam wand, being sure to keep it on the surface.",
+            "3. Add the espresso to the heated mixture and combine, moving the frothing pitcher with a circular movement. Pour into the glass.",
+            "4. Foam the skim milk in the frothing pitcher using the milk frother and add it to the mixture in the glass.",
+            "5. Decorate with a light dusting of cocoa powder, and serve."
+        ]
+    },
+    {   "category": "Hot Specialty Drinks",
+        "name": "Marocchino",
+        "urlAlias": "marocchino",
+        "description": "The Hot Marocchino is an inspired composition of deep colors, creamy consistencies and intense flavors. Serve it in a glass to reveal the full mouthwatering beauty of this specialty drink—chocolate on the bottom, coffee and milk in the middle and a velvety cream on top-an experience to enjoy layer by delicious layer.",
+        "ingredients": [
+            "1 shot illy espresso",
+            "2-3 tsp (10-15 ml) hot chocolate",
+            "1 scant oz (25 ml) fresh whole milk",
+            "Cocoa powder"
+        ],
+        "preparation": [
+            "1. Prepare the hot chocolate in a small pitcher and pour it into the serving glass.",
+            "2. Prepare the espresso directly into the same glass, adding it to the hot chocolate.",
+            "3. Dust the mixture with a fine layer of cocoa powder.",
+            "4. Foam the milk in a steaming pitcher, using the steam wand of your espresso machine.",
+            "5. Gently pour the foam on top of the coffee/hot chocolate mixture and serve."
         ]
     }
 ]
