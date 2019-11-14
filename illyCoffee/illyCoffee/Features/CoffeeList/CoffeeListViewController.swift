@@ -45,5 +45,9 @@ extension CoffeeListViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.isSelected = false
+        let coffee = self.coffeeListViewModel.coffeeList[indexPath.row]
+        let coffeeDetailViewController = CoffeeDetailViewController()
+        coffeeDetailViewController.coffeeDetailViewModel = CoffeeDetailViewModel(with: coffee)
+        self.navigationController?.pushViewController(coffeeDetailViewController, animated: true)
     }
 }

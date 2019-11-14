@@ -18,6 +18,10 @@
 		73A8C2F4237D0D20002BA970 /* CoffeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2F3237D0D20002BA970 /* CoffeeListViewModel.swift */; };
 		73A8C2F6237D0DC7002BA970 /* Coffee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2F5237D0DC7002BA970 /* Coffee.swift */; };
 		73A8C2F9237D0F46002BA970 /* CoffeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2F8237D0F46002BA970 /* CoffeeTableViewCell.swift */; };
+		73A8C2FC237D1925002BA970 /* CoffeeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2FB237D1925002BA970 /* CoffeeDetailViewController.swift */; };
+		73A8C2FE237D195F002BA970 /* CoffeeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2FD237D195F002BA970 /* CoffeeDetailViewModel.swift */; };
+		73A8C301237D1C52002BA970 /* CoffeeImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C300237D1C52002BA970 /* CoffeeImageTableViewCell.swift */; };
+		73A8C303237D1DED002BA970 /* CoffeeLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C302237D1DED002BA970 /* CoffeeLabelTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		73A8C2F3237D0D20002BA970 /* CoffeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeListViewModel.swift; sourceTree = "<group>"; };
 		73A8C2F5237D0DC7002BA970 /* Coffee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffee.swift; sourceTree = "<group>"; };
 		73A8C2F8237D0F46002BA970 /* CoffeeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeTableViewCell.swift; sourceTree = "<group>"; };
+		73A8C2FB237D1925002BA970 /* CoffeeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailViewController.swift; sourceTree = "<group>"; };
+		73A8C2FD237D195F002BA970 /* CoffeeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailViewModel.swift; sourceTree = "<group>"; };
+		73A8C300237D1C52002BA970 /* CoffeeImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeImageTableViewCell.swift; sourceTree = "<group>"; };
+		73A8C302237D1DED002BA970 /* CoffeeLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeLabelTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +136,7 @@
 		73A8C2EA237CF6C4002BA970 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				73A8C2FF237D1C23002BA970 /* CoffeeDetail */,
 				73A8C2FA237D1153002BA970 /* CoffeeList */,
 			);
 			path = Features;
@@ -157,6 +166,17 @@
 				73A8C2F8237D0F46002BA970 /* CoffeeTableViewCell.swift */,
 			);
 			path = CoffeeList;
+			sourceTree = "<group>";
+		};
+		73A8C2FF237D1C23002BA970 /* CoffeeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				73A8C2FB237D1925002BA970 /* CoffeeDetailViewController.swift */,
+				73A8C2FD237D195F002BA970 /* CoffeeDetailViewModel.swift */,
+				73A8C300237D1C52002BA970 /* CoffeeImageTableViewCell.swift */,
+				73A8C302237D1DED002BA970 /* CoffeeLabelTableViewCell.swift */,
+			);
+			path = CoffeeDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +281,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				73A8C2F1237D0CC5002BA970 /* ProgrammaticView.swift in Sources */,
+				73A8C301237D1C52002BA970 /* CoffeeImageTableViewCell.swift in Sources */,
 				73A8C2EF237D0C86002BA970 /* CoffeeListViewController.swift in Sources */,
+				73A8C2FC237D1925002BA970 /* CoffeeDetailViewController.swift in Sources */,
+				73A8C303237D1DED002BA970 /* CoffeeLabelTableViewCell.swift in Sources */,
 				73A8C2F4237D0D20002BA970 /* CoffeeListViewModel.swift in Sources */,
 				73A8C2E7237CF64F002BA970 /* FeatureTabViewController.swift in Sources */,
 				73A8C2C5237CF3D4002BA970 /* AppDelegate.swift in Sources */,
+				73A8C2FE237D195F002BA970 /* CoffeeDetailViewModel.swift in Sources */,
 				73A8C2F9237D0F46002BA970 /* CoffeeTableViewCell.swift in Sources */,
 				73A8C2F6237D0DC7002BA970 /* Coffee.swift in Sources */,
 			);
