@@ -1,0 +1,134 @@
+[
+    {   "category": "Specialty Cold Drinks",
+        "name": "Espresso Frappe",
+        "urlAlias": "espresso-frappe",
+        "description": "A delicious drink that conquers at first glance: an inviting, velvety iced foam prepared on the spot. This milk-free beverage is a light, soft version of the frappe made with just espresso, a few ice cubes and a little sugar",
+        "ingredients": [
+            "3 tbsp. (40-50 ml) espresso",
+            "1 tbsp plus 1 tsp (20 ml) liquid sugar",
+            "5-6 ice cubes"
+        ],
+        "preparation": [
+            "1. Chill the 2/3 cup (150 ml) glass",
+            "2. Prepare two espressos in a cappuccino cup",
+            "3. Put the ice cubes, liquid sugar and two espressos, which are added as the last ingredient, into the blender. Blend for 30 seconds, until it thickens into a frappe.",
+            "4. Pour into the glass, filtering the ice with the strainer. Serve."
+        ]
+    },
+    {   "category": "Specialty Cold Drinks",
+        "name": "Greek Cappuccino",
+        "urlAlias": "greek-cold-cappuccino",
+        "description": "A shower of crushed ice makes this drink a lighter version of a traditional iced cappuccino.",
+        "ingredients": [
+            "1 shot illy espresso",
+            "2 tsp liquid sugar (10 ml)",
+            "4 Tbsp skim milk (60 ml)",
+            "4-5 ice cubes"
+        ],
+        "preparation": [
+            "1. Chill an 8 oz ( 240 ml) glass",
+            "2. Prepare the espresso into a small pour pitcher",
+            "3. Place the ice cubes, liquid sugar, skim milk and espresso in a blender",
+            "4. Blend for no more than 5 seconds and pour into the glass"
+        ]
+    },
+    {   "category": "Specialty Cold Drinks",
+        "name": "Freddo Espresso Shaken",
+        "urlAlias": "freddo-espresso-shaken",
+        "description": "This recipe is a cold and refreshing espresso drink, perfect from those warm summer days. Prepared in a shaker with sugar and a few ice cubes, the espresso acquires an irresistible soft cream. A delight to be sipped during a relaxing break.  Enjoy with a biscotti or two.",
+        "ingredients": [
+            "3 tbsp. (40-50 ml) espresso",
+            "2 tsp (10 ml) liquid sugar",
+            "Ice cubes"
+        ],
+        "preparation": [
+            "1. Chill the glass.",
+            "2. Prepare two espressos in a cappuccino cup.",
+            "3. Put the ice cubes, liquid sugar and two espressos, which are added as the last ingredient, into the Boston shaker.",
+            "4. Shake vigorously and pour into the chilled glass, filtering the ice with a strainer."
+        ]
+    },
+    {   "category": "Specialty Cold Drinks",
+        "name": "Tiramisu Espresso",
+        "urlAlias": "tiramisu-espresso",
+        "description": "A drinkable version of a favorite Italian dessert, perfect at the end of a meal or as a rich and tasty treat.",
+        "ingredients": [
+            "2 shots illy espresso",
+            "1 scoop vanilla ice cream or gelato",
+            "2 ladyfingers, crumbled",
+            "Unsweetened cocoa powder"
+        ],
+        "preparation": [
+            "1. Prepare 2 shots espresso into a small pour pitcher",
+            "2. Place ice cream or gelato, ladyfingers and espresso in a blender",
+            "3. Blend 20-30 seconds until thick, with a frappé texture",
+            "4. Pour into a decorative glass and top with a dusting of cocoa powder"
+        ]
+    },
+    {   "category": "Specialty Cold Drinks",
+        "name": "Light Melting Espresso",
+        "urlAlias": "light-melting-espresso",
+        "description": "A combination of coffee and chocolate with a delicate touch of milk, giving rise to a cold, light froth with an unexpected warm espresso heart.",
+        "ingredients": [
+            "1 tbsp plus 1 or 2 tsp (20-25 ml) espresso",
+            "1/3 cup (80 ml) skim milk",
+            "2 tsp (10 ml) liquid cane sugar",
+            "Approx. 1/16 oz (3 g) unsweetened cocoa powder"
+        ],
+        "preparation": [
+            "1. Prepare the espresso in the cup and sweeten it with some liquid sugar.",
+            "2. Mix the milk and cocoa powder in the frothing pitcher.",
+            "3. Pour the milk and cocoa frappe into the 2/3 cup (150 ml) glass and add the sweetened espresso, pouring it into the center of the frappe. Decorate with a light dusting of cocoa powder."
+        ]
+    },
+    {   "category": "Specialty Cold Drinks",
+        "name": "Espresso Freddo Greco",
+        "urlAlias": "caffe-freddo-greco",
+        "description": "It looks like the classic shaken double this cold espresso, which makes it even more intriguing. The king of classics meets ice, to give the palate an intense and vigorous pleasure.",
+        "ingredients": [
+            "3 tbsp. (40-50 ml) espresso",
+            "2 tsp (10 ml) of liquid sugar",
+            "4 ice cubes"
+        ],
+        "preparation": [
+            "1. Cool the 150 ml glass beaker.",
+            "2. Prepare two espresso in the cappuccino cup.",
+            "3. In the blender glass put the ice, the liquid sugar and the two expressed, which you will add as the last ingredient. Blend for up to 5 seconds.",
+            "4. Pour the preparation into the glass and serve."
+        ]
+    },
+    {   "category": "Specialty Cold Drinks",
+        "name": "Espresso Freddo",
+        "urlAlias": "espresso-freddo",
+        "description": "A cold variation of excellence of the most classic coffee, espresso. ",
+        "ingredients": [
+            "3 tbsp. (40-50 ml) espresso",
+            "2 tsp (10 ml) of liquid sugar",
+            "2 tsp (10 ml) of cold mineral water",
+            "Ice cubes"
+        ],
+        "preparation": [
+            "1. Chill an 8 oz (240 ml) glass",
+            "2. Prepare 2 espresso into a cappuccino cup",
+            "3. In the mixing glass, mix the water, ice cubes, liquid sugar and the 2 espresso with the mixing spoon, which you will add as the last ingredient.",
+            "4. Pour the mixture into the glass, filtering the ice with the strainer, and serve."
+        ]
+    },
+    {   "category": "Specialty Cold Drinks",
+        "name": "affogato",
+        "urlAlias": "espresso-ice-cream-affogato",
+        "description": "The affogato immediately spreads good cheer. This delectable espresso dessert features ice cream and a rich, smooth covering of espresso.",
+        "ingredients": [
+            "1 tbsp. plus 1 or 2 tsp (20-25 ml) espresso",
+            "1 1/2 oz (40 g) ice cream",
+            "Fresh heavy cream",
+            "Unsweetened cocoa powder"
+        ],
+        "preparation": [
+            "1. Prepare the espresso in a small cup.",
+            "2. Put the  ice cream in the glass and pour the espresso over it.",
+            "3. Add whip cream (optional) and use as garnish.",
+            "4. Decorate with a little cocoa powder and serve."
+        ]
+    }
+]

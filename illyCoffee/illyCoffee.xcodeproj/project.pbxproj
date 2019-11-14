@@ -13,6 +13,7 @@
 		73A8C2D1237CF3FE002BA970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2CF237CF3FE002BA970 /* LaunchScreen.storyboard */; };
 		73A8C2DC237CF3FF002BA970 /* illyCoffeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2DB237CF3FF002BA970 /* illyCoffeeTests.swift */; };
 		73A8C2E7237CF64F002BA970 /* FeatureTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2E6237CF64F002BA970 /* FeatureTabViewController.swift */; };
+		73A8C2ED237D006F002BA970 /* illyCoffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2EC237D006F002BA970 /* illyCoffee.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		73A8C2DB237CF3FF002BA970 /* illyCoffeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = illyCoffeeTests.swift; sourceTree = "<group>"; };
 		73A8C2DD237CF3FF002BA970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73A8C2E6237CF64F002BA970 /* FeatureTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTabViewController.swift; sourceTree = "<group>"; };
+		73A8C2EC237D006F002BA970 /* illyCoffee.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = illyCoffee.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				73A8C2CD237CF3FE002BA970 /* Assets.xcassets */,
 				73A8C2CF237CF3FE002BA970 /* LaunchScreen.storyboard */,
 				73A8C2D2237CF3FE002BA970 /* Info.plist */,
+				73A8C2EC237D006F002BA970 /* illyCoffee.json */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A8C2ED237D006F002BA970 /* illyCoffee.json in Resources */,
 				73A8C2D1237CF3FE002BA970 /* LaunchScreen.storyboard in Resources */,
 				73A8C2CE237CF3FE002BA970 /* Assets.xcassets in Resources */,
 			);
