@@ -14,6 +14,10 @@
 		73A8C2DC237CF3FF002BA970 /* illyCoffeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2DB237CF3FF002BA970 /* illyCoffeeTests.swift */; };
 		73A8C2E7237CF64F002BA970 /* FeatureTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2E6237CF64F002BA970 /* FeatureTabViewController.swift */; };
 		73A8C2ED237D006F002BA970 /* illyCoffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2EC237D006F002BA970 /* illyCoffee.json */; };
+		73A8C2EF237D0C86002BA970 /* CoffeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2EE237D0C86002BA970 /* CoffeeListViewController.swift */; };
+		73A8C2F1237D0CC5002BA970 /* ProgrammaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2F0237D0CC5002BA970 /* ProgrammaticView.swift */; };
+		73A8C2F4237D0D20002BA970 /* CoffeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2F3237D0D20002BA970 /* CoffeeListViewModel.swift */; };
+		73A8C2F6237D0DC7002BA970 /* Coffee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2F5237D0DC7002BA970 /* Coffee.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		73A8C2DD237CF3FF002BA970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73A8C2E6237CF64F002BA970 /* FeatureTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTabViewController.swift; sourceTree = "<group>"; };
 		73A8C2EC237D006F002BA970 /* illyCoffee.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = illyCoffee.json; sourceTree = "<group>"; };
+		73A8C2EE237D0C86002BA970 /* CoffeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeListViewController.swift; sourceTree = "<group>"; };
+		73A8C2F0237D0CC5002BA970 /* ProgrammaticView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammaticView.swift; sourceTree = "<group>"; };
+		73A8C2F3237D0D20002BA970 /* CoffeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeListViewModel.swift; sourceTree = "<group>"; };
+		73A8C2F5237D0DC7002BA970 /* Coffee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffee.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +88,11 @@
 			isa = PBXGroup;
 			children = (
 				73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */,
+				73A8C2F2237D0CCC002BA970 /* Protocols */,
 				73A8C2EA237CF6C4002BA970 /* Features */,
 				73A8C2E9237CF6B6002BA970 /* SupportingFiles */,
 				73A8C2E8237CF6AD002BA970 /* Navigation */,
+				73A8C2F7237D0E45002BA970 /* Model */,
 			);
 			path = illyCoffee;
 			sourceTree = "<group>";
@@ -119,8 +129,26 @@
 			isa = PBXGroup;
 			children = (
 				73A8C2C8237CF3D4002BA970 /* EmptyViewController.swift */,
+				73A8C2EE237D0C86002BA970 /* CoffeeListViewController.swift */,
+				73A8C2F3237D0D20002BA970 /* CoffeeListViewModel.swift */,
 			);
 			path = Features;
+			sourceTree = "<group>";
+		};
+		73A8C2F2237D0CCC002BA970 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				73A8C2F0237D0CC5002BA970 /* ProgrammaticView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		73A8C2F7237D0E45002BA970 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				73A8C2F5237D0DC7002BA970 /* Coffee.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,9 +252,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A8C2F1237D0CC5002BA970 /* ProgrammaticView.swift in Sources */,
+				73A8C2EF237D0C86002BA970 /* CoffeeListViewController.swift in Sources */,
+				73A8C2F4237D0D20002BA970 /* CoffeeListViewModel.swift in Sources */,
 				73A8C2C9237CF3D4002BA970 /* EmptyViewController.swift in Sources */,
 				73A8C2E7237CF64F002BA970 /* FeatureTabViewController.swift in Sources */,
 				73A8C2C5237CF3D4002BA970 /* AppDelegate.swift in Sources */,
+				73A8C2F6237D0DC7002BA970 /* Coffee.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
