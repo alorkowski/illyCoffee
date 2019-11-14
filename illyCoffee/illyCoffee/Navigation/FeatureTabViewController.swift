@@ -3,6 +3,10 @@ import UIKit
 final class FeatureTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewControllers = [ EmptyViewController() ]
+
+        let coffeeListViewController = CoffeeListViewController()
+        coffeeListViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
+
+        self.viewControllers = [ UINavigationController(rootViewController: coffeeListViewController) ]
     }
 }
