@@ -6,13 +6,14 @@ final class CoffeeDetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = coffeeDetailViewModel.coffee.name
+        self.setupNavigationBar()
         self.setupTableView()
     }
 }
 
 // MARK: - Setup Functions
 extension CoffeeDetailViewController {
-    private func setNavigationBar() {
+    private func setupNavigationBar() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back",
                                                                 style: .done,
                                                                 target: self,
