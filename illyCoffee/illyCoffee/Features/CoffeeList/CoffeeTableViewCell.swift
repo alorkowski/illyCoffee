@@ -46,7 +46,15 @@ extension CoffeeTableViewCell {
 extension CoffeeTableViewCell {
     func configure(with coffee: Coffee?) {
         guard let coffee = coffee else { return }
-        coffeeImage.image = coffee.image
+        ImageCache.shared.retreiveImage(for: coffee.urlAlias) {
+            [weak self] result in
+            switch result {
+            case .success(let image):
+                self?.coffeeImage.image = image
+            case .failure:
+                self?.coffeeImage.image = UIImage()
+            }
+        }
         coffeeLabel.text = coffee.name
     }
 }

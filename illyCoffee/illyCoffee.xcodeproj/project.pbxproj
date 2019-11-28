@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		731EA4A0239044880075CACE /* NetworkSevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EA49F239044880075CACE /* NetworkSevice.swift */; };
+		731EA4A323905DAB0075CACE /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EA4A223905DAB0075CACE /* ImageCache.swift */; };
 		73A8C2C5237CF3D4002BA970 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */; };
 		73A8C2CE237CF3FE002BA970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2CD237CF3FE002BA970 /* Assets.xcassets */; };
 		73A8C2D1237CF3FE002BA970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2CF237CF3FE002BA970 /* LaunchScreen.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		731EA49F239044880075CACE /* NetworkSevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSevice.swift; sourceTree = "<group>"; };
+		731EA4A223905DAB0075CACE /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		73A8C2C1237CF3D4002BA970 /* illyCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = illyCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73A8C2CD237CF3FE002BA970 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		731EA4A1239044920075CACE /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				731EA4A223905DAB0075CACE /* ImageCache.swift */,
 				731EA49F239044880075CACE /* NetworkSevice.swift */,
 			);
 			path = Service;
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73A8C2F1237D0CC5002BA970 /* ProgrammaticView.swift in Sources */,
+				731EA4A323905DAB0075CACE /* ImageCache.swift in Sources */,
 				73A8C301237D1C52002BA970 /* CoffeeImageTableViewCell.swift in Sources */,
 				73A8C2EF237D0C86002BA970 /* CoffeeListViewController.swift in Sources */,
 				731EA4A0239044880075CACE /* NetworkSevice.swift in Sources */,
