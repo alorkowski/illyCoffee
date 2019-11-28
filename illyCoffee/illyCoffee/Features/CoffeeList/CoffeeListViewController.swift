@@ -2,6 +2,7 @@ import UIKit
 
 final class CoffeeListViewController: UITableViewController {
     let coffeeListViewModel = CoffeeListViewModel()
+    let activityView = UIActivityIndicatorView(style: .whiteLarge)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -9,9 +10,11 @@ final class CoffeeListViewController: UITableViewController {
         self.title = "illyCoffee"
         self.setupNavigationBar()
         self.setupTableView()
+        self.showActivityIndicator()
         self.coffeeListViewModel.retrieveCoffeeData { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
+                self?.hideActivityIndicator()
             }
         }
     }
@@ -31,6 +34,16 @@ extension CoffeeListViewController {
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.separatorStyle = .none
         CoffeeTableViewCell.register(with: self.tableView)
+    }
+
+     private func showActivityIndicator() {
+        self.activityView.center = self.view.center
+        self.view.addSubview(self.activityView)
+        self.activityView.startAnimating()
+    }
+
+    private func hideActivityIndicator() {
+        self.activityView.stopAnimating()
     }
 }
 
