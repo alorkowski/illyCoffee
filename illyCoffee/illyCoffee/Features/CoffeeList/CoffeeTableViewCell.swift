@@ -1,11 +1,14 @@
 import UIKit
 
 class CoffeeTableViewCell: UITableViewCell, ProgrammaticView {
+    let mainView = WhiteRoundedView()
     let coffeeImage = UIImageView()
     let coffeeLabel = UILabel()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.backgroundColor = .clear
+        self.setupContentView()
         self.setupImageView()
         self.setupLabelView()
     }
@@ -22,23 +25,33 @@ class CoffeeTableViewCell: UITableViewCell, ProgrammaticView {
 
 // MARK: - Setup functions
 extension CoffeeTableViewCell {
+    private func setupContentView() {
+        self.contentView.addSubview(mainView)
+        self.contentView.sendSubviewToBack(mainView)
+        self.mainView.translatesAutoresizingMaskIntoConstraints = false
+        self.mainView.topAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.topAnchor, constant: 2).isActive = true
+        self.mainView.bottomAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.bottomAnchor, constant: -2).isActive = true
+        self.mainView.leadingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        self.mainView.trailingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.trailingAnchor).isActive = true
+    }
+
     private func setupImageView() {
-        self.contentView.addSubview(coffeeImage)
+        self.mainView.addSubview(coffeeImage)
         self.coffeeImage.contentMode = .scaleAspectFit
         self.coffeeImage.translatesAutoresizingMaskIntoConstraints = false
-        self.coffeeImage.topAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.topAnchor).isActive = true
-        self.coffeeImage.bottomAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        self.coffeeImage.leadingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
+        self.coffeeImage.topAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.topAnchor).isActive = true
+        self.coffeeImage.bottomAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        self.coffeeImage.leadingAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
         self.coffeeImage.widthAnchor.constraint(equalToConstant: 50).isActive = true
     }
 
     private func setupLabelView() {
-        self.contentView.addSubview(coffeeLabel)
+        self.mainView.addSubview(coffeeLabel)
         self.coffeeLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.coffeeLabel.topAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.topAnchor).isActive = true
-        self.coffeeLabel.bottomAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        self.coffeeLabel.topAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.topAnchor).isActive = true
+        self.coffeeLabel.bottomAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.bottomAnchor).isActive = true
         self.coffeeLabel.leadingAnchor.constraint(equalTo: self.coffeeImage.trailingAnchor, constant: 8).isActive = true
-        self.coffeeLabel.trailingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        self.coffeeLabel.trailingAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
 }
 

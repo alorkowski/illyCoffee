@@ -60,11 +60,6 @@ extension CoffeeListViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = CoffeeTableViewCell.dequeue(from: tableView, for: indexPath)
         cell.configure(with: self.coffeeListViewModel.getCoffee(for: indexPath))
-        cell.backgroundColor = .white
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 8
-        cell.clipsToBounds = true
         return cell
     }
 
@@ -76,7 +71,7 @@ extension CoffeeListViewController {
 // MARK: - UITableViewDelegate
 extension CoffeeListViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 70
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
