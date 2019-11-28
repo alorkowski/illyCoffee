@@ -1,22 +1,16 @@
 import UIKit
 
 final class CoffeeListViewModel {
-    // TODO: Probably a good idea to do this in the background thread especially when the json gets large
-    lazy var coffeeList: [String: [Coffee]] = {
-        guard let path = Bundle.main.path(forResource: "illyCoffee", ofType: "json"),
-            let data = try? Data(contentsOf: URL(fileURLWithPath: path)),
-            let decodedData = try? JSONDecoder().decode([Coffee].self, from: data)
-            else { return [:] }
-        return Dictionary(grouping: decodedData) { (coffee: Coffee) in coffee.category }
-    }()
-
-    var coffeeCategories: [String] {
-        return coffeeList.keys.sorted()
-    }
+    private lazy var networkService = NetworkService()
+    private var coffeeList = [String: [Coffee]]()
 }
 
 // MARK: - Computed Properties
 extension CoffeeListViewModel {
+    var coffeeCategories: [String] {
+        return coffeeList.keys.sorted()
+    }
+
     var numberOfSections: Int {
         return coffeeList.count
     }
@@ -40,5 +34,27 @@ extension CoffeeListViewModel {
 
     func getCoffeeCategory(for section: Int) -> String {
         return self.coffeeCategories[section]
+    }
+}
+
+// MARK: - Network Functions
+extension CoffeeListViewModel {
+    func retrieveCoffeeData(completion: (() -> Void)?) {
+        let closure = {
+            [weak self] (result: Result<[Coffee], NetworkError>) in
+            switch result {
+            case .success(let data):
+                self?.coffeeList = Dictionary(grouping: data) { (coffee) in
+                    coffee.category
+                }
+                completion?()
+            case .failure(let error):
+                fatalError("Error: \(error.localizedDescription)")
+                break
+            }
+        }
+        self.networkService.getLocalData(forResource: "illyCoffee",
+                                         ofType: "json",
+                                         completion: closure)
     }
 }

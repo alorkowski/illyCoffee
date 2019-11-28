@@ -9,6 +9,11 @@ final class CoffeeListViewController: UITableViewController {
         self.title = "illyCoffee"
         self.setupNavigationBar()
         self.setupTableView()
+        self.coffeeListViewModel.retrieveCoffeeData { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
     }
 }
 
