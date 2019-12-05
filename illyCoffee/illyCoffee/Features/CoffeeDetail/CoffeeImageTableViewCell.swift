@@ -20,10 +20,14 @@ extension CoffeeImageTableViewCell {
         self.contentView.addSubview(self.coffeeImage)
         self.coffeeImage.contentMode = .scaleAspectFit
         self.coffeeImage.translatesAutoresizingMaskIntoConstraints = false
-        self.coffeeImage.topAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.topAnchor).isActive = true
-        self.coffeeImage.bottomAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        self.coffeeImage.leadingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
-        self.coffeeImage.trailingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
+        NSLayoutConstraint.activate([
+            self.coffeeImage.topAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.topAnchor),
+            self.coffeeImage.bottomAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.bottomAnchor),
+            self.coffeeImage.leadingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.leadingAnchor,
+                                                      constant: 8),
+            self.coffeeImage.trailingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.trailingAnchor,
+                                                       constant: -8)
+        ])
     }
 }
 

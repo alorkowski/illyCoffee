@@ -39,19 +39,23 @@ extension CoffeeTableViewCell {
         self.mainView.addSubview(coffeeImage)
         self.coffeeImage.contentMode = .scaleAspectFit
         self.coffeeImage.translatesAutoresizingMaskIntoConstraints = false
-        self.coffeeImage.topAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.topAnchor).isActive = true
-        self.coffeeImage.bottomAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        self.coffeeImage.leadingAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
-        self.coffeeImage.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        NSLayoutConstraint.activate([
+            self.coffeeImage.topAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.topAnchor),
+            self.coffeeImage.bottomAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.bottomAnchor),
+            self.coffeeImage.leadingAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+            self.coffeeImage.widthAnchor.constraint(equalToConstant: 50)
+        ])
     }
 
     private func setupLabelView() {
         self.mainView.addSubview(coffeeLabel)
         self.coffeeLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.coffeeLabel.topAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.topAnchor).isActive = true
-        self.coffeeLabel.bottomAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        self.coffeeLabel.leadingAnchor.constraint(equalTo: self.coffeeImage.trailingAnchor, constant: 8).isActive = true
-        self.coffeeLabel.trailingAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            self.coffeeLabel.topAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.topAnchor),
+            self.coffeeLabel.bottomAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.bottomAnchor),
+            self.coffeeLabel.leadingAnchor.constraint(equalTo: self.coffeeImage.trailingAnchor, constant: 8),
+            self.coffeeLabel.trailingAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.trailingAnchor)
+        ])
     }
 }
 
