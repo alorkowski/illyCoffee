@@ -2,7 +2,11 @@ import UIKit
 
 final class CoffeeListViewModel {
     private lazy var networkService = NetworkService()
-    private var coffeeList = [String: [Coffee]]()
+    private var coffeeList: [String: [Coffee]]
+
+    init(coffeeList: [String: [Coffee]]? = nil) {
+        self.coffeeList = coffeeList ?? [String: [Coffee]]()
+    }
 }
 
 // MARK: - Computed Properties
@@ -20,7 +24,7 @@ extension CoffeeListViewModel {
     }
 }
 
-// MARK: - Functions
+// MARK: - Methods
 extension CoffeeListViewModel {
     func numberOfCoffees(in section: Int) -> Int {
         guard let coffeeCategory = coffeeList[self.coffeeCategories[section]] else { return 0 }
