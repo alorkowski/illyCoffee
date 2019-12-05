@@ -7,10 +7,6 @@ final class Coffee: Decodable {
     let description: String
     let ingredients: [String]
     let preparation: [String]
-
-    lazy var image: UIImage? = {
-        return UIImage(named: self.urlAlias)
-    }()
 }
 
 extension Coffee: Equatable {

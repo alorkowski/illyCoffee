@@ -17,6 +17,24 @@ enum NetworkError: Error {
 }
 
 final class NetworkService {
+//    func getLocalData<T: Decodable>(forResource fileName: String,
+//                                    ofType fileExtension: String,
+//                                    completion: @escaping (Result<T, NetworkError>) -> Void) {
+//        guard let url = Bundle.main.url(forResource: fileName, withExtension: fileExtension) else {
+//            completion(.failure(.fileNotFound))
+//            return
+//        }
+//        guard let data = try? Data(contentsOf: url) else {
+//            completion(.failure(.noData))
+//            return
+//        }
+//        guard let decodedData = try? JSONDecoder().decode(T.self, from: data) else {
+//            completion(.failure(.invalidData))
+//            return
+//        }
+//        completion(.success(decodedData))
+//    }
+
     func getLocalData<T: Decodable>(forResource fileName: String,
                                     ofType fileExtension: String,
                                     completion: @escaping (Result<T, NetworkError>) -> Void) {
