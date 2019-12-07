@@ -17,13 +17,15 @@ final class CoffeeLabelTableViewCell: UITableViewCell, ProgrammaticView {
 extension CoffeeLabelTableViewCell {
     private func setupLabelView() {
         self.contentView.addSubview(self.coffeeLabel)
-        self.coffeeLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.coffeeLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor).isActive = true
-        self.coffeeLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
-        self.coffeeLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 8).isActive = true
-        self.coffeeLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8).isActive = true
         self.coffeeLabel.numberOfLines = 0
         self.coffeeLabel.textAlignment = .left
+        self.coffeeLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.coffeeLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+            self.coffeeLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+            self.coffeeLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 8),
+            self.coffeeLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8)
+        ])
     }
 }
 

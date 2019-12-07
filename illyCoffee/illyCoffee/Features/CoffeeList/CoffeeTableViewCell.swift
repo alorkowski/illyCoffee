@@ -26,17 +26,19 @@ class CoffeeTableViewCell: UITableViewCell, ProgrammaticView {
 // MARK: - Setup functions
 extension CoffeeTableViewCell {
     private func setupContentView() {
-        self.contentView.addSubview(mainView)
-        self.contentView.sendSubviewToBack(mainView)
+        self.contentView.addSubview(self.mainView)
+        self.contentView.sendSubviewToBack(self.mainView)
         self.mainView.translatesAutoresizingMaskIntoConstraints = false
-        self.mainView.topAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.topAnchor, constant: 2).isActive = true
-        self.mainView.bottomAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.bottomAnchor, constant: -2).isActive = true
-        self.mainView.leadingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        self.mainView.trailingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            self.mainView.topAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.topAnchor, constant: 2),
+            self.mainView.bottomAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.bottomAnchor, constant: -2),
+            self.mainView.leadingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.leadingAnchor),
+            self.mainView.trailingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.trailingAnchor)
+        ])
     }
 
     private func setupImageView() {
-        self.mainView.addSubview(coffeeImage)
+        self.mainView.addSubview(self.coffeeImage)
         self.coffeeImage.contentMode = .scaleAspectFit
         self.coffeeImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -48,7 +50,7 @@ extension CoffeeTableViewCell {
     }
 
     private func setupLabelView() {
-        self.mainView.addSubview(coffeeLabel)
+        self.mainView.addSubview(self.coffeeLabel)
         self.coffeeLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.coffeeLabel.topAnchor.constraint(equalTo: self.mainView.safeAreaLayoutGuide.topAnchor),
@@ -72,6 +74,6 @@ extension CoffeeTableViewCell {
                 self?.coffeeImage.image = UIImage()
             }
         }
-        coffeeLabel.text = coffee.name
+        self.coffeeLabel.text = coffee.name
     }
 }

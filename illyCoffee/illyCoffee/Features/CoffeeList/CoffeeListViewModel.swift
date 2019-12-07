@@ -12,27 +12,27 @@ final class CoffeeListViewModel {
 // MARK: - Computed Properties
 extension CoffeeListViewModel {
     var coffeeCategories: [String] {
-        return coffeeList.keys.sorted()
+        return self.coffeeList.keys.sorted()
     }
 
     var numberOfSections: Int {
-        return coffeeList.count
+        return self.coffeeList.count
     }
 
     var numberOfCoffees: Int {
-        return coffeeList.reduce(0) { $0 + $1.value.count }
+        return self.coffeeList.reduce(0) { $0 + $1.value.count }
     }
 }
 
 // MARK: - Methods
 extension CoffeeListViewModel {
     func numberOfCoffees(in section: Int) -> Int {
-        guard let coffeeCategory = coffeeList[self.coffeeCategories[section]] else { return 0 }
+        guard let coffeeCategory = self.coffeeList[self.coffeeCategories[section]] else { return 0 }
         return coffeeCategory.count
     }
 
     func getCoffee(for indexPath: IndexPath) -> Coffee? {
-        guard let coffeeCategory = coffeeList[self.coffeeCategories[indexPath.section]] else { return nil }
+        guard let coffeeCategory = self.coffeeList[self.coffeeCategories[indexPath.section]] else { return nil }
         return coffeeCategory[indexPath.row]
     }
 
