@@ -23,7 +23,7 @@ class CoffeeTableViewCell: UITableViewCell, ProgrammaticView {
     }
 }
 
-// MARK: - Setup functions
+// MARK: - Setup Methods
 extension CoffeeTableViewCell {
     private func setupContentView() {
         self.contentView.addSubview(self.mainView)
@@ -61,7 +61,7 @@ extension CoffeeTableViewCell {
     }
 }
 
-// MARK: - Utility Functions
+// MARK: - Methods
 extension CoffeeTableViewCell {
     func configure(with coffee: Coffee?) {
         guard let coffee = coffee else { return }

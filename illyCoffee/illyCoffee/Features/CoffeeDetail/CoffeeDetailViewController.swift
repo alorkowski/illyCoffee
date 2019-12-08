@@ -11,7 +11,7 @@ final class CoffeeDetailViewController: UITableViewController {
     }
 }
 
-// MARK: - Setup Functions
+// MARK: - Setup Methods
 extension CoffeeDetailViewController {
     private func setupNavigationBar() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back",

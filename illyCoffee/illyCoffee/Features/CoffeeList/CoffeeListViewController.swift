@@ -2,7 +2,7 @@ import UIKit
 
 final class CoffeeListViewController: UITableViewController {
     let coffeeListViewModel = CoffeeListViewModel()
-    let activityView = UIActivityIndicatorView(style: .whiteLarge)
+    var activityView: UIActivityIndicatorView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ final class CoffeeListViewController: UITableViewController {
     }
 }
 
-// MARK: - Setup functions
+// MARK: - Setup Methods
 extension CoffeeListViewController {
     private func setupNavigationBar() {
         self.navigationController?.navigationBar.backgroundColor = .systemRed
@@ -37,13 +37,16 @@ extension CoffeeListViewController {
     }
 
      private func showActivityIndicator() {
-        self.activityView.center = self.view.center
-        self.view.addSubview(self.activityView)
-        self.activityView.startAnimating()
+        self.activityView = UIActivityIndicatorView(style: .whiteLarge)
+        guard let activityView = self.activityView else { return }
+        activityView.center = self.view.center
+        self.view.addSubview(activityView)
+        activityView.startAnimating()
     }
 
     private func hideActivityIndicator() {
-        self.activityView.stopAnimating()
+        self.activityView?.stopAnimating()
+        self.activityView = nil
     }
 }
 

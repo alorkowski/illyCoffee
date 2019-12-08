@@ -14,7 +14,7 @@ final class CoffeeImageTableViewCell: UITableViewCell, ProgrammaticView {
     }
 }
 
-// MARK: - Setup functions
+// MARK: - Setup Methods
 extension CoffeeImageTableViewCell {
     private func setupImageView() {
         self.contentView.addSubview(self.coffeeImage)
@@ -31,7 +31,7 @@ extension CoffeeImageTableViewCell {
     }
 }
 
-// MARK: - Utility Functions
+// MARK: - Methods
 extension CoffeeImageTableViewCell {
     func configure(with coffee: Coffee?) {
         guard let coffee = coffee else { return }

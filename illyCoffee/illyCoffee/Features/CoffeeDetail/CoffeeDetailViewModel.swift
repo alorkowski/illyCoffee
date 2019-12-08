@@ -8,7 +8,7 @@ final class CoffeeDetailViewModel {
     }
 }
 
-// MARK: - Computed properties
+// MARK: - Computed Properties
 extension CoffeeDetailViewModel {
     var numberOfIngredients: Int {
         return self.coffee.ingredients.count

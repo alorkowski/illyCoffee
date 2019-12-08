@@ -41,10 +41,10 @@ extension CoffeeListViewModel {
     }
 }
 
-// MARK: - Network Functions
+// MARK: - Networking Methods
 extension CoffeeListViewModel {
     func retrieveCoffeeData(completion: (() -> Void)?) {
-        let closure = {
+        self.networkService.getLocalData(forResource: "illyCoffee", ofType: "json") {
             [weak self] (result: Result<[Coffee], NetworkError>) in
             switch result {
             case .success(let data):
@@ -57,8 +57,5 @@ extension CoffeeListViewModel {
                 break
             }
         }
-        self.networkService.getLocalData(forResource: "illyCoffee",
-                                         ofType: "json",
-                                         completion: closure)
     }
 }

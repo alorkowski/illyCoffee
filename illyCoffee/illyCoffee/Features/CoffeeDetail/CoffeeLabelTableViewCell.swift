@@ -13,7 +13,7 @@ final class CoffeeLabelTableViewCell: UITableViewCell, ProgrammaticView {
     }
 }
 
-// MARK: - Setup Functions
+// MARK: - Setup Methods
 extension CoffeeLabelTableViewCell {
     private func setupLabelView() {
         self.contentView.addSubview(self.coffeeLabel)
@@ -29,7 +29,7 @@ extension CoffeeLabelTableViewCell {
     }
 }
 
-// MARK: - Utility Functions
+// MARK: - Methods
 extension CoffeeLabelTableViewCell {
     func configure(with message: String?) {
         guard let message = message else { return }
