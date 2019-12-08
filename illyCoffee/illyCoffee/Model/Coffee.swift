@@ -23,6 +23,14 @@ final class Coffee: Decodable {
     }
 }
 
+// MARK: - Methods
+extension Coffee {
+    func contains(_ query: String) -> Bool {
+        return self.name.lowercased().contains(query) || self.category.lowercased().contains(query)
+    }
+}
+
+// MARK: - Equatable
 extension Coffee: Equatable {
     static func ==(lhs: Coffee, rhs: Coffee) -> Bool {
         return lhs.urlAlias == rhs.urlAlias
