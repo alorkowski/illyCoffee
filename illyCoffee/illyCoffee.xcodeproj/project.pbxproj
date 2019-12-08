@@ -10,6 +10,7 @@
 		731EA4A0239044880075CACE /* NetworkSevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EA49F239044880075CACE /* NetworkSevice.swift */; };
 		731EA4A323905DAB0075CACE /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EA4A223905DAB0075CACE /* ImageCache.swift */; };
 		731EA4A523906DA10075CACE /* WhiteRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EA4A423906DA10075CACE /* WhiteRoundedView.swift */; };
+		7352174C239D1BFC00FE4CC0 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7352174B239D1BFC00FE4CC0 /* AppData.swift */; };
 		73A8C2C5237CF3D4002BA970 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */; };
 		73A8C2CE237CF3FE002BA970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2CD237CF3FE002BA970 /* Assets.xcassets */; };
 		73A8C2D1237CF3FE002BA970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2CF237CF3FE002BA970 /* LaunchScreen.storyboard */; };
@@ -43,6 +44,7 @@
 		731EA49F239044880075CACE /* NetworkSevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSevice.swift; sourceTree = "<group>"; };
 		731EA4A223905DAB0075CACE /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		731EA4A423906DA10075CACE /* WhiteRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteRoundedView.swift; sourceTree = "<group>"; };
+		7352174B239D1BFC00FE4CC0 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		73A8C2C1237CF3D4002BA970 /* illyCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = illyCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73A8C2CD237CF3FE002BA970 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		73A8C2C3237CF3D4002BA970 /* illyCoffee */ = {
 			isa = PBXGroup;
 			children = (
+				7352174B239D1BFC00FE4CC0 /* AppData.swift */,
 				73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */,
 				73A8C2EA237CF6C4002BA970 /* Features */,
 				73A8C2F7237D0E45002BA970 /* Model */,
@@ -317,6 +320,7 @@
 				73A8C2FE237D195F002BA970 /* CoffeeDetailViewModel.swift in Sources */,
 				73A8C2F9237D0F46002BA970 /* CoffeeTableViewCell.swift in Sources */,
 				73A8C2F6237D0DC7002BA970 /* Coffee.swift in Sources */,
+				7352174C239D1BFC00FE4CC0 /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

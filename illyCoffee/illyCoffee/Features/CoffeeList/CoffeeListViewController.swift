@@ -7,8 +7,8 @@ final class CoffeeListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .systemRed
-        self.title = "illyCoffee"
+        self.view.backgroundColor = AppData.Colors.featuredCoffee
+        self.title = AppData.title
         self.setupNavigationBar()
         self.setupTableView()
         self.setupSearchController()
@@ -25,8 +25,8 @@ final class CoffeeListViewController: UITableViewController {
 // MARK: - Setup Methods
 extension CoffeeListViewController {
     private func setupNavigationBar() {
-        self.navigationController?.navigationBar.backgroundColor = .systemRed
-        self.navigationController?.navigationBar.barTintColor = .systemRed
+        self.navigationController?.navigationBar.backgroundColor = AppData.Colors.featuredCoffee
+        self.navigationController?.navigationBar.barTintColor = AppData.Colors.featuredCoffee
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.isOpaque = true
     }
@@ -39,11 +39,16 @@ extension CoffeeListViewController {
     }
 
     private func setupSearchController() {
+        if let textField = self.searchController.searchBar.value(forKey: "searchField") as? UITextField {
+            textField.backgroundColor = AppData.Colors.lighterGray
+        }
+        self.searchController.dimsBackgroundDuringPresentation = true
         self.searchController.searchResultsUpdater = self
         self.searchController.obscuresBackgroundDuringPresentation = false
         self.searchController.searchBar.placeholder = "Search"
         self.navigationItem.searchController = self.searchController
         self.definesPresentationContext = true
+        self.extendedLayoutIncludesOpaqueBars = true
     }
 
     private func showActivityIndicator() {
