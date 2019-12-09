@@ -1,9 +1,18 @@
 import UIKit
 
 final class CoffeeListViewController: UITableViewController {
-    let coffeeListViewModel = CoffeeListViewModel()
+    let coffeeListViewModel: CoffeeListViewModel
     let searchController = UISearchController(searchResultsController: nil)
     var activityView: UIActivityIndicatorView?
+
+    init(viewModel: CoffeeListViewModel) {
+        self.coffeeListViewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,7 +22,7 @@ final class CoffeeListViewController: UITableViewController {
         self.setupTableView()
         self.setupSearchController()
         self.showActivityIndicator()
-        self.coffeeListViewModel.retrieveCoffeeData { [weak self] in
+        self.coffeeListViewModel.getCoffeeList { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
                 self?.hideActivityIndicator()

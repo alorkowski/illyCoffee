@@ -11,6 +11,12 @@
 		731EA4A323905DAB0075CACE /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EA4A223905DAB0075CACE /* ImageCache.swift */; };
 		731EA4A523906DA10075CACE /* WhiteRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EA4A423906DA10075CACE /* WhiteRoundedView.swift */; };
 		7352174C239D1BFC00FE4CC0 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7352174B239D1BFC00FE4CC0 /* AppData.swift */; };
+		7352174E239D92BE00FE4CC0 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7352174D239D92BD00FE4CC0 /* CoreDataService.swift */; };
+		7352175A239DA02400FE4CC0 /* FavoriteCoffee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73521758239DA02400FE4CC0 /* FavoriteCoffee+CoreDataClass.swift */; };
+		7352175B239DA02400FE4CC0 /* FavoriteCoffee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73521759239DA02400FE4CC0 /* FavoriteCoffee+CoreDataProperties.swift */; };
+		7352175D239DA80900FE4CC0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7352175C239DA80900FE4CC0 /* NetworkError.swift */; };
+		7352175F239DA8BE00FE4CC0 /* CoffeeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7352175E239DA8BE00FE4CC0 /* CoffeeManager.swift */; };
+		73521762239DD6C400FE4CC0 /* illyCoffee.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 73521751239D953300FE4CC0 /* illyCoffee.xcdatamodeld */; };
 		73A8C2C5237CF3D4002BA970 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */; };
 		73A8C2CE237CF3FE002BA970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2CD237CF3FE002BA970 /* Assets.xcassets */; };
 		73A8C2D1237CF3FE002BA970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2CF237CF3FE002BA970 /* LaunchScreen.storyboard */; };
@@ -45,6 +51,12 @@
 		731EA4A223905DAB0075CACE /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		731EA4A423906DA10075CACE /* WhiteRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteRoundedView.swift; sourceTree = "<group>"; };
 		7352174B239D1BFC00FE4CC0 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		7352174D239D92BD00FE4CC0 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		73521752239D953300FE4CC0 /* illyCoffee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = illyCoffee.xcdatamodel; sourceTree = "<group>"; };
+		73521758239DA02400FE4CC0 /* FavoriteCoffee+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteCoffee+CoreDataClass.swift"; sourceTree = "<group>"; };
+		73521759239DA02400FE4CC0 /* FavoriteCoffee+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteCoffee+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7352175C239DA80900FE4CC0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		7352175E239DA8BE00FE4CC0 /* CoffeeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeManager.swift; sourceTree = "<group>"; };
 		73A8C2C1237CF3D4002BA970 /* illyCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = illyCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73A8C2CD237CF3FE002BA970 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,13 +98,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		731EA4A1239044920075CACE /* Service */ = {
+		731EA4A1239044920075CACE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7352174D239D92BD00FE4CC0 /* CoreDataService.swift */,
 				731EA4A223905DAB0075CACE /* ImageCache.swift */,
+				7352175C239DA80900FE4CC0 /* NetworkError.swift */,
 				731EA49F239044880075CACE /* NetworkSevice.swift */,
+				73521751239D953300FE4CC0 /* illyCoffee.xcdatamodeld */,
 			);
-			path = Service;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		73521760239DC43000FE4CC0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7352175E239DA8BE00FE4CC0 /* CoffeeManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		73A8C2B8237CF3D4002BA970 = {
@@ -119,10 +142,11 @@
 				7352174B239D1BFC00FE4CC0 /* AppData.swift */,
 				73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */,
 				73A8C2EA237CF6C4002BA970 /* Features */,
-				73A8C2F7237D0E45002BA970 /* Model */,
+				73521760239DC43000FE4CC0 /* Managers */,
+				73A8C2F7237D0E45002BA970 /* Models */,
 				73A8C2E8237CF6AD002BA970 /* Navigation */,
 				73A8C2F2237D0CCC002BA970 /* Protocols */,
-				731EA4A1239044920075CACE /* Service */,
+				731EA4A1239044920075CACE /* Services */,
 				73A8C2E9237CF6B6002BA970 /* SupportingFiles */,
 			);
 			path = illyCoffee;
@@ -175,12 +199,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		73A8C2F7237D0E45002BA970 /* Model */ = {
+		73A8C2F7237D0E45002BA970 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				73A8C2F5237D0DC7002BA970 /* Coffee.swift */,
+				73521758239DA02400FE4CC0 /* FavoriteCoffee+CoreDataClass.swift */,
+				73521759239DA02400FE4CC0 /* FavoriteCoffee+CoreDataProperties.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		73A8C2FA237D1153002BA970 /* CoffeeList */ = {
@@ -286,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73521762239DD6C400FE4CC0 /* illyCoffee.xcdatamodeld in Resources */,
 				73A8C2ED237D006F002BA970 /* illyCoffee.json in Resources */,
 				73A8C2D1237CF3FE002BA970 /* LaunchScreen.storyboard in Resources */,
 				73A8C2CE237CF3FE002BA970 /* Assets.xcassets in Resources */,
@@ -310,16 +337,21 @@
 				73A8C2F1237D0CC5002BA970 /* ProgrammaticView.swift in Sources */,
 				731EA4A323905DAB0075CACE /* ImageCache.swift in Sources */,
 				73A8C301237D1C52002BA970 /* CoffeeImageTableViewCell.swift in Sources */,
+				7352174E239D92BE00FE4CC0 /* CoreDataService.swift in Sources */,
 				73A8C2EF237D0C86002BA970 /* CoffeeListViewController.swift in Sources */,
 				731EA4A0239044880075CACE /* NetworkSevice.swift in Sources */,
 				73A8C2FC237D1925002BA970 /* CoffeeDetailViewController.swift in Sources */,
+				7352175D239DA80900FE4CC0 /* NetworkError.swift in Sources */,
 				73A8C303237D1DED002BA970 /* CoffeeLabelTableViewCell.swift in Sources */,
 				73A8C2F4237D0D20002BA970 /* CoffeeListViewModel.swift in Sources */,
 				73A8C2E7237CF64F002BA970 /* FeatureTabViewController.swift in Sources */,
+				7352175F239DA8BE00FE4CC0 /* CoffeeManager.swift in Sources */,
 				73A8C2C5237CF3D4002BA970 /* AppDelegate.swift in Sources */,
+				7352175A239DA02400FE4CC0 /* FavoriteCoffee+CoreDataClass.swift in Sources */,
 				73A8C2FE237D195F002BA970 /* CoffeeDetailViewModel.swift in Sources */,
 				73A8C2F9237D0F46002BA970 /* CoffeeTableViewCell.swift in Sources */,
 				73A8C2F6237D0DC7002BA970 /* Coffee.swift in Sources */,
+				7352175B239DA02400FE4CC0 /* FavoriteCoffee+CoreDataProperties.swift in Sources */,
 				7352174C239D1BFC00FE4CC0 /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,6 +615,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		73521751239D953300FE4CC0 /* illyCoffee.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				73521752239D953300FE4CC0 /* illyCoffee.xcdatamodel */,
+			);
+			currentVersion = 73521752239D953300FE4CC0 /* illyCoffee.xcdatamodel */;
+			path = illyCoffee.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 73A8C2B9237CF3D4002BA970 /* Project object */;
 }

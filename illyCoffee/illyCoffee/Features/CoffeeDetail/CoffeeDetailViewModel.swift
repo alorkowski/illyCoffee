@@ -1,4 +1,5 @@
 import Foundation
+import CoreData
 
 final class CoffeeDetailViewModel {
     let coffee: Coffee
@@ -16,5 +17,12 @@ extension CoffeeDetailViewModel {
 
     var numberOfPreparations: Int {
         return self.coffee.preparation.count
+    }
+}
+
+// MARK: - CoreData Methods
+extension CoffeeDetailViewModel {
+    func save() {
+        CoffeeManager.shared.save(self.coffee)
     }
 }

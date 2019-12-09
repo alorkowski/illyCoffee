@@ -5,7 +5,7 @@ final class CoffeeListViewModelTests: XCTestCase {
     var sut: CoffeeListViewModel!
 
     override func setUp() {
-        self.sut = CoffeeListViewModel(coffeeList: MockCoffeeData.mockData)
+        self.sut = CoffeeListViewModel(state: .featured, coffeeList: MockCoffeeData.mockData)
     }
 
     override func tearDown() {
@@ -14,15 +14,15 @@ final class CoffeeListViewModelTests: XCTestCase {
 
     // MARK: Computed Properties
     func testCoffeeCategories() {
-        XCTAssertEqual(["A", "B", "C"], self.sut.coffeeCategories)
+        XCTAssertEqual(["A", "B", "C"], self.sut.coffeeCategories(filtered: false))
     }
 
     func testNumberOfCoffees() {
-        XCTAssertEqual(4, self.sut.numberOfCoffees)
+        XCTAssertEqual(4, self.sut.numberOfCoffees(filtered: false))
     }
 
     func testNumberOfSections() {
-        XCTAssertEqual(3, self.sut.numberOfSections)
+        XCTAssertEqual(3, self.sut.numberOfSections(filtered: false))
     }
 
     // MARK: Methods

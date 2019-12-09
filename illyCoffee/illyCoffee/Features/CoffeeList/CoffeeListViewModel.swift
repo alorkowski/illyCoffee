@@ -1,11 +1,17 @@
 import UIKit
 
 final class CoffeeListViewModel {
-    private lazy var networkService = NetworkService()
+    enum CoffeeListState {
+        case featured
+        case favorited
+    }
+
+    private let state: CoffeeListState
     private var coffeeList: [String: [Coffee]]
     private var filteredCoffeeList: [String: [Coffee]]
 
-    init(coffeeList: [String: [Coffee]]? = nil) {
+    init(state: CoffeeListState, coffeeList: [String: [Coffee]]? = nil) {
+        self.state = state
         self.coffeeList = coffeeList ?? [String: [Coffee]]()
         self.filteredCoffeeList = [String: [Coffee]]()
     }
@@ -47,18 +53,17 @@ extension CoffeeListViewModel {
 
 // MARK: - Networking Methods
 extension CoffeeListViewModel {
-    func retrieveCoffeeData(completion: (() -> Void)?) {
-        self.networkService.getLocalData(forResource: "illyCoffee", ofType: "json") {
-            [weak self] (result: Result<[Coffee], NetworkError>) in
-            switch result {
-            case .success(let data):
-                self?.coffeeList = Dictionary(grouping: data) { (coffee) in
-                    coffee.category
-                }
+    func getCoffeeList(completion: (() -> Void)?) {
+        switch self.state {
+        case .featured:
+            CoffeeManager.shared.getCoffeeList { [weak self] coffeeList in
+                self?.coffeeList = coffeeList
                 completion?()
-            case .failure(let error):
-                fatalError("Error: \(error.localizedDescription)")
-                break
+            }
+        case .favorited:
+            CoffeeManager.shared.getFavoriteCoffeeList { [weak self] coffeeList in
+                self?.coffeeList = coffeeList
+                completion?()
             }
         }
     }

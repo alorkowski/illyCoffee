@@ -31,8 +31,12 @@ extension CoffeeDetailViewController {
         CoffeeImageTableViewCell.register(with: self.tableView)
         CoffeeLabelTableViewCell.register(with: self.tableView)
     }
+}
 
+// MARK: @objc Methods
+extension CoffeeDetailViewController {
     @objc func saveCoffeeToFavorites() {
+        self.coffeeDetailViewModel.save()
         self.navigationController?.popViewController(animated: true)
     }
 
