@@ -23,6 +23,7 @@
 		7352178F239E191700FE4CC0 /* CoffeeCollectionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7352178E239E191700FE4CC0 /* CoffeeCollectionFilter.swift */; };
 		73521792239E1ED700FE4CC0 /* CoffeeDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73521791239E1ED700FE4CC0 /* CoffeeDetailManager.swift */; };
 		73521794239E200100FE4CC0 /* CoffeeCoreDataAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73521793239E200100FE4CC0 /* CoffeeCoreDataAdaptor.swift */; };
+		73521796239E375600FE4CC0 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73521795239E375600FE4CC0 /* Array+Extension.swift */; };
 		73A8C2C5237CF3D4002BA970 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */; };
 		73A8C2CE237CF3FE002BA970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2CD237CF3FE002BA970 /* Assets.xcassets */; };
 		73A8C2D1237CF3FE002BA970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2CF237CF3FE002BA970 /* LaunchScreen.storyboard */; };
@@ -68,6 +69,7 @@
 		7352178E239E191700FE4CC0 /* CoffeeCollectionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCollectionFilter.swift; sourceTree = "<group>"; };
 		73521791239E1ED700FE4CC0 /* CoffeeDetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailManager.swift; sourceTree = "<group>"; };
 		73521793239E200100FE4CC0 /* CoffeeCoreDataAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCoreDataAdaptor.swift; sourceTree = "<group>"; };
+		73521795239E375600FE4CC0 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		73A8C2C1237CF3D4002BA970 /* illyCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = illyCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73A8C2CD237CF3FE002BA970 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +131,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		73521797239E376100FE4CC0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				73521795239E375600FE4CC0 /* Array+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		73A8C2B8237CF3D4002BA970 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +162,7 @@
 			children = (
 				7352174B239D1BFC00FE4CC0 /* AppData.swift */,
 				73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */,
+				73521797239E376100FE4CC0 /* Extensions */,
 				73A8C2EA237CF6C4002BA970 /* Features */,
 				73A8C2F7237D0E45002BA970 /* Models */,
 				73A8C2E8237CF6AD002BA970 /* Navigation */,
@@ -359,6 +370,7 @@
 				73A8C2EF237D0C86002BA970 /* CoffeeListViewController.swift in Sources */,
 				731EA4A0239044880075CACE /* NetworkSevice.swift in Sources */,
 				73A8C2FC237D1925002BA970 /* CoffeeDetailViewController.swift in Sources */,
+				73521796239E375600FE4CC0 /* Array+Extension.swift in Sources */,
 				7352175D239DA80900FE4CC0 /* NetworkError.swift in Sources */,
 				73A8C303237D1DED002BA970 /* CoffeeLabelTableViewCell.swift in Sources */,
 				73A8C2E7237CF64F002BA970 /* FeatureTabViewController.swift in Sources */,

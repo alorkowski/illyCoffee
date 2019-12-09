@@ -26,6 +26,10 @@ extension FeaturedCoffeeViewModel {
             }
         }
     }
+
+    func updateCoffeeCollection(completion: (() -> Void)?) {
+        // Do nothing
+    }
 }
 
 // MARK: - CoffeeFilter Methods

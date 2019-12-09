@@ -4,6 +4,7 @@ import CoreData
 final class CoreDataService {
     static let shared = CoreDataService()
     private init() {}
+    private var managedObjects = [FavoriteCoffee]()
 
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "illyCoffee")
@@ -27,6 +28,7 @@ final class CoreDataService {
 // MARK: - Methods
 extension CoreDataService {
     func save(_ coffee: Coffee) {
+        guard !managedObjects.contains(where: { $0.urlAlias == coffee.urlAlias }) else { return }
         let favoriteCoffee = FavoriteCoffee(context: self.context)
         favoriteCoffee.category = coffee.category
         favoriteCoffee.name = coffee.name
@@ -37,6 +39,7 @@ extension CoreDataService {
         guard self.context.hasChanges else { return }
         do {
             try self.saveContext()
+            self.managedObjects.append(favoriteCoffee)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
@@ -45,17 +48,26 @@ extension CoreDataService {
     func fetchFavorites() -> CoffeeArray {
         let request: NSFetchRequest<FavoriteCoffee> = FavoriteCoffee.fetchRequest()
         do {
-            return try context.fetch(request).map{
-                Coffee(category: $0.category,
-                       name: $0.name,
-                       urlAlias: $0.urlAlias,
-                       description: $0.summary,
-                       ingredients: $0.ingredients,
-                       preparation: $0.preparation)
-            }
+            self.managedObjects = try context.fetch(request)
+            return self.managedObjects.convertToCoffeeArray()
         } catch {
             print(error.localizedDescription)
             return []
         }
+    }
+
+    func delete(_ coffee: Coffee) {
+        guard let index = self.managedObjects.firstIndex(where: { $0.urlAlias == coffee.urlAlias }) else { return }
+        self.context.delete(self.managedObjects[index])
+        do {
+            try self.saveContext()
+            self.managedObjects.remove(at: index)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+
+    func updateWithLatest() -> CoffeeCollection {
+        return self.managedObjects.convertToCoffeeCollection()
     }
 }

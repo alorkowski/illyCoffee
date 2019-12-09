@@ -8,6 +8,7 @@ protocol CoffeeCollectionManager: CoffeeCollectionAccessor, CoffeeCollectionFilt
     var filteredCoffeeCollection: CoffeeCollection { get set }
     var isEditable: Bool { get set }
     func getCoffeeCollection(completion: (() -> Void)?)
+    func updateCoffeeCollection(completion: (() -> Void)?)
 }
 
 // MARK: - CoffeeCollectionAccessor Protocol Extension

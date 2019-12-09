@@ -28,6 +28,13 @@ final class CoffeeListViewController: UITableViewController {
             }
         }
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.viewModel.updateCoffeeCollection(){
+            [weak self] in DispatchQueue.main.async { self?.tableView.reloadData() }
+        }
+    }
 }
 
 // MARK: - Setup Methods

@@ -15,8 +15,17 @@ final class FavoritedCoffeeViewModel: CoffeeCollectionManager {
 // MARK: Networking Methods
 extension FavoritedCoffeeViewModel {
     func getCoffeeCollection(completion: (() -> Void)?) {
-        self.coffeeCollection = Dictionary(grouping: self.coreDataService.fetchFavorites()){ $0.category }
-        completion?()
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.coffeeCollection = Dictionary(grouping: self.coreDataService.fetchFavorites()){ $0.category }
+            completion?()
+        }
+    }
+
+    func updateCoffeeCollection(completion: (() -> Void)?) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.coffeeCollection = self.coreDataService.updateWithLatest()
+            completion?()
+        }
     }
 }
 
@@ -34,25 +43,10 @@ extension FavoritedCoffeeViewModel {
 
 // MARK: - CoffeeCoreDataAdaptor Methods
 extension FavoritedCoffeeViewModel {
-    func addFavorite(_ coffee: Coffee) {
-        guard let category = self.coffeeCollection[coffee.category],
-            !category.contains(coffee)
-            else { return }
-        self.coffeeCollection[coffee.category]?.append(coffee)
-        self.coreDataService.save(coffee)
-    }
-
     func deleteFavorite(in section: Int, for row: Int) {
         guard let coffee = self.coffeeCollection[self.coffeeCategories()[section]]?.remove(at: row)
             else { return }
-        let favoriteCoffee = FavoriteCoffee(context: coreDataService.context)
-        favoriteCoffee.category = coffee.category
-        favoriteCoffee.name = coffee.name
-        favoriteCoffee.urlAlias = coffee.urlAlias
-        favoriteCoffee.summary = coffee.description
-        favoriteCoffee.ingredients = coffee.ingredients
-        favoriteCoffee.preparation = coffee.preparation
-        self.coreDataService.context.delete(favoriteCoffee)
+        self.coreDataService.delete(coffee)
         try? self.coreDataService.saveContext()
     }
 }
