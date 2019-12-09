@@ -1,36 +1,26 @@
 import UIKit
 
-final class CoffeeListViewModel {
-    enum CoffeeListState {
-        case featured
-        case favorited
-    }
+typealias CoffeeList = [String: [Coffee]]
 
-    private let state: CoffeeListState
-    private var coffeeList: [String: [Coffee]]
-    private var filteredCoffeeList: [String: [Coffee]]
-
-    init(state: CoffeeListState, coffeeList: [String: [Coffee]]? = nil) {
-        self.state = state
-        self.coffeeList = coffeeList ?? [String: [Coffee]]()
-        self.filteredCoffeeList = [String: [Coffee]]()
-    }
+protocol CoffeeCollection: CoffeeListAccessor, CoffeeFilter {
+    var coffeeList: CoffeeList { get set }
+    var filteredCoffeeList: CoffeeList { get set }
 }
 
-// MARK: - Computed Properties
-extension CoffeeListViewModel {
-    var isEditable: Bool {
-        switch self.state {
-        case .favorited:
-            return true
-        case .featured:
-            return false
-        }
-    }
+protocol CoffeeListAccessor {
+    func coffeeCategories(filtered: Bool) -> [String]
+    func numberOfSections(filtered: Bool) -> Int
+    func numberOfCoffees(filtered: Bool) -> Int
+    func numberOfCoffees(in section: Int, filtered: Bool) -> Int
+    func getCoffee(for indexPath: IndexPath, filtered: Bool) -> Coffee?
+    func getCoffeeCategory(for section: Int, filtered: Bool) -> String
 }
 
-// MARK: - Methods
-extension CoffeeListViewModel {
+protocol CoffeeFilter {
+    func filterContentForSearchText(_ searchText: String, completion: @escaping () -> Void)
+}
+
+extension CoffeeCollection {
     func coffeeCategories(filtered: Bool = false) -> [String] {
         return filtered ? self.filteredCoffeeList.keys.sorted() : self.coffeeList.keys.sorted()
     }
@@ -60,42 +50,5 @@ extension CoffeeListViewModel {
 
     func getCoffeeCategory(for section: Int, filtered: Bool = false) -> String {
         return self.coffeeCategories(filtered: filtered)[section]
-    }
-
-    func removeCoffee(section: Int, row: Int) {
-        guard self.isEditable,
-            let coffee = self.coffeeList[self.coffeeCategories()[section]]?.remove(at: row)
-            else { return }
-        CoffeeManager.shared.removeFavorite(coffee)
-    }
-}
-
-// MARK: - Networking Methods
-extension CoffeeListViewModel {
-    func getCoffeeList(completion: (() -> Void)?) {
-        switch self.state {
-        case .featured:
-            CoffeeManager.shared.getCoffeeList { [weak self] coffeeList in
-                self?.coffeeList = coffeeList
-                completion?()
-            }
-        case .favorited:
-            CoffeeManager.shared.getFavoriteCoffeeList { [weak self] coffeeList in
-                self?.coffeeList = coffeeList
-                completion?()
-            }
-        }
-    }
-}
-
-// MARK: - SearchController Methods
-extension CoffeeListViewModel {
-    func filterContentForSearchText(_ searchText: String, completion: @escaping () -> Void) {
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            defer { completion() }
-            guard let coffees = self?.coffeeList.values.flatMap({$0}) else { return }
-            let data = [Coffee](coffees).filter{ $0.contains(searchText.lowercased()) }
-            self?.filteredCoffeeList = Dictionary(grouping: data) { (coffee) in coffee.category }
-        }
     }
 }
