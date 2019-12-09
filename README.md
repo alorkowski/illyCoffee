@@ -6,9 +6,9 @@ App features include:
 - Browse and search coffee recipes
 - Easily save your favorite recipes
 
-![illyCoffee01](images/01.png)
-![illyCoffee02](images/02.png)
-![illyCoffee03](images/03.png)
+![illyCoffee01](images/01_featured.gif)
+![illyCoffee02](images/02_search.gif)
+![illyCoffee03](images/03_favorited.gif)
 
 ## Authors
 * **Alexander Lorkowski** - [alorkowski](https://github.com/alorkowski)
