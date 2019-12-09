@@ -121,6 +121,10 @@ extension CoffeeListViewController {
         self.navigationController?.pushViewController(coffeeDetailViewController, animated: true)
     }
 
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return self.viewModel.isEditable
+    }
+
     override func tableView(_ tableView: UITableView,
                             commit editingStyle: UITableViewCell.EditingStyle,
                             forRowAt indexPath: IndexPath) {
