@@ -7,15 +7,13 @@ final class FeatureTabBarController: UITabBarController {
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
 
-        let featuredVM = CoffeeListViewModel(state: .featured)
-        let featuredVC = CoffeeListViewController(viewModel: featuredVM)
+        let featuredVC = CoffeeListViewController(viewModel: FeaturedCoffeeViewModel())
         featuredVC.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
 
-        let favoritedVM = CoffeeListViewModel(state: .favorited)
-        let favoriteVC = CoffeeListViewController(viewModel: favoritedVM)
-        favoriteVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+        let favoritedVC = CoffeeListViewController(viewModel: FavoritedCoffeeViewModel())
+        favoritedVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
 
         self.viewControllers = [ UINavigationController(rootViewController: featuredVC),
-                                 UINavigationController(rootViewController: favoriteVC)]
+                                 UINavigationController(rootViewController: favoritedVC)]
     }
 }

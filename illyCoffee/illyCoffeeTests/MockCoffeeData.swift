@@ -27,9 +27,9 @@ struct MockCoffeeData {
                                     description: "It's water...",
                                     ingredients: ["Water"],
                                     preparation: ["1) Pour water into a glass."]) ]
-    static let categoryC: [Coffee] = []
+    static let categoryC: CoffeeArray = []
 
-    static let mockData: [String: [Coffee]] = [ "A" : Self.categoryA,
-                                                "B" : Self.categoryB,
-                                                "C" : Self.categoryC ]
+    static let mockData: CoffeeCollection = [ "A" : Self.categoryA,
+                                              "B" : Self.categoryB,
+                                              "C" : Self.categoryC ]
 }

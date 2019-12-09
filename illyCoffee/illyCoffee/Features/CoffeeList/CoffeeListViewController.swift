@@ -1,12 +1,12 @@
 import UIKit
 
 final class CoffeeListViewController: UITableViewController {
-    let coffeeListViewModel: CoffeeListViewModel
+    let viewModel: CoffeeCollectionManager
     let searchController = UISearchController(searchResultsController: nil)
     var activityView: UIActivityIndicatorView?
 
-    init(viewModel: CoffeeListViewModel) {
-        self.coffeeListViewModel = viewModel
+    init(viewModel: CoffeeCollectionManager) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -22,7 +22,7 @@ final class CoffeeListViewController: UITableViewController {
         self.setupTableView()
         self.setupSearchController()
         self.showActivityIndicator()
-        self.coffeeListViewModel.getCoffeeList { [weak self] in
+        self.viewModel.getCoffeeCollection{ [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
                 self?.hideActivityIndicator()
@@ -77,21 +77,21 @@ extension CoffeeListViewController {
 // MARK: - UITableViewDataSource
 extension CoffeeListViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return self.coffeeListViewModel.numberOfSections(filtered: self.isFiltering)
+        return self.viewModel.numberOfSections(filtered: self.isFiltering)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.coffeeListViewModel.numberOfCoffees(in: section, filtered: self.isFiltering)
+        return self.viewModel.numberOfCoffees(in: section, filtered: self.isFiltering)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = CoffeeTableViewCell.dequeue(from: tableView, for: indexPath)
-        cell.configure(with: self.coffeeListViewModel.getCoffee(for: indexPath, filtered: self.isFiltering))
+        cell.configure(with: self.viewModel.getCoffee(for: indexPath, filtered: self.isFiltering))
         return cell
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.coffeeListViewModel.getCoffeeCategory(for: section, filtered: self.isFiltering)
+        return self.viewModel.getCoffeeCategory(for: section, filtered: self.isFiltering)
     }
 }
 
@@ -107,22 +107,22 @@ extension CoffeeListViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let coffee = self.coffeeListViewModel.getCoffee(for: indexPath, filtered: self.isFiltering)
+        guard let coffee = self.viewModel.getCoffee(for: indexPath, filtered: self.isFiltering)
             else { return }
         let coffeeDetailViewController = CoffeeDetailViewController()
         coffeeDetailViewController.coffeeDetailViewModel = CoffeeDetailViewModel(with: coffee)
         self.navigationController?.pushViewController(coffeeDetailViewController, animated: true)
     }
 
-    override func tableView(_ tableView: UITableView,
-                            commit editingStyle: UITableViewCell.EditingStyle,
-                            forRowAt indexPath: IndexPath) {
-        guard self.coffeeListViewModel.isEditable,
-            editingStyle == .delete
-            else { return }
-        self.coffeeListViewModel.removeCoffee(section: indexPath.section, row: indexPath.row)
-        self.tableView.deleteRows(at: [indexPath], with: .fade)
-    }
+//    override func tableView(_ tableView: UITableView,
+//                            commit editingStyle: UITableViewCell.EditingStyle,
+//                            forRowAt indexPath: IndexPath) {
+//        guard self.viewModel.isEditable,
+//            editingStyle == .delete
+//            else { return }
+//        self.viewModel.removeCoffee(section: indexPath.section, row: indexPath.row)
+//        self.tableView.deleteRows(at: [indexPath], with: .fade)
+//    }
 }
 
 // MARK: - UISearchResultsUpdating
@@ -137,7 +137,7 @@ extension CoffeeListViewController: UISearchResultsUpdating {
 
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
-        self.coffeeListViewModel.filterContentForSearchText(searchBar.text!) {
+        self.viewModel.filterContentForSearchText(searchBar.text!) {
             [weak self] in DispatchQueue.main.async { self?.tableView.reloadData() }
         }
     }

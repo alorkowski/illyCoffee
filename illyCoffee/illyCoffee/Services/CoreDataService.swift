@@ -39,7 +39,7 @@ extension CoreDataService {
         }
     }
 
-    func fetchFavorites() -> [Coffee] {
+    func fetchFavorites() -> CoffeeArray {
         let request: NSFetchRequest<FavoriteCoffee> = FavoriteCoffee.fetchRequest()
         do {
             return try context.fetch(request).map{
