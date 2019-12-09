@@ -25,6 +25,7 @@ final class CoffeeListViewController: UITableViewController {
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
                 self?.hideActivityIndicator()
+                self?.toggleEmptyState()
             }
         }
     }
@@ -32,7 +33,11 @@ final class CoffeeListViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.viewModel.updateCoffeeCollection(){
-            [weak self] in DispatchQueue.main.async { self?.tableView.reloadData() }
+            [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+                self?.toggleEmptyState()
+            }
         }
     }
 }
@@ -78,6 +83,17 @@ extension CoffeeListViewController {
     private func hideActivityIndicator() {
         self.activityView?.stopAnimating()
         self.activityView = nil
+    }
+
+    private func toggleEmptyState() {
+        let numberOfSections = self.viewModel.numberOfSections(filtered: self.isFiltering)
+        if self.viewModel.isEditable, numberOfSections == 0, self.activityView == nil {
+            let emptyStateView = EmptyStateView()
+            self.tableView.backgroundView = emptyStateView
+            emptyStateView.configure(with: AppData.EmptyState.message)
+        } else {
+            self.tableView.backgroundView = nil
+        }
     }
 }
 
