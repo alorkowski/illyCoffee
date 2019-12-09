@@ -23,6 +23,6 @@ extension CoffeeDetailViewModel {
 // MARK: - CoreData Methods
 extension CoffeeDetailViewModel {
     func save() {
-        CoffeeManager.shared.save(self.coffee)
+        CoffeeManager.shared.addFavorite(self.coffee)
     }
 }

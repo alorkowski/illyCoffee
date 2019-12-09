@@ -39,18 +39,10 @@ extension CoreDataService {
         }
     }
 
-    func fetchFavorites() -> [Coffee] {
+    func fetchFavorites() -> [FavoriteCoffee] {
         let request: NSFetchRequest<FavoriteCoffee> = FavoriteCoffee.fetchRequest()
         do {
-            let favoriteCoffeeList = try context.fetch(request)
-            return favoriteCoffeeList.map{
-                return Coffee(category: $0.category,
-                              name: $0.name,
-                              urlAlias: $0.urlAlias,
-                              description: $0.summary,
-                              ingredients: $0.ingredients,
-                              preparation: $0.preparation)
-            }
+            return try context.fetch(request)
         } catch {
             print(error.localizedDescription)
             return []

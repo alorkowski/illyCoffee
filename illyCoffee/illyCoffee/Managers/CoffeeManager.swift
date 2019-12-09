@@ -6,6 +6,7 @@ final class CoffeeManager {
     private lazy var networkService = NetworkService()
     private var coffeeList: [String: [Coffee]]?
     private var favoriteCoffeeList: [String: [Coffee]]?
+    private var coreDataCoffee = [FavoriteCoffee]()
 }
 
 // MARK: - Methods
@@ -26,8 +27,29 @@ extension CoffeeManager {
         }
     }
 
-    func save(_ coffee: Coffee) {
+    func addFavorite(_ coffee: Coffee) {
+        if self.favoriteCoffeeList == nil { self.getFavoriteCoffeeList(completion: nil) }
+        guard let category = self.favoriteCoffeeList?[coffee.category],
+            !category.contains(coffee)
+            else { return }
+        self.favoriteCoffeeList?[coffee.category]?.append(coffee)
         self.coreDataService.save(coffee)
+    }
+
+    func removeFavorite(_ coffee: Coffee) {
+        guard let index = self.coreDataCoffee.firstIndex(where: { $0.urlAlias == coffee.urlAlias }) else { return }
+        let deletedCoffee = self.coreDataCoffee.remove(at: index)
+        let coffees = self.coreDataCoffee.map{
+            return Coffee(category: $0.category,
+                          name: $0.name,
+                          urlAlias: $0.urlAlias,
+                          description: $0.summary,
+                          ingredients: $0.ingredients,
+                          preparation: $0.preparation)
+        }
+        self.favoriteCoffeeList = Dictionary(grouping: coffees) { $0.category }
+        self.coreDataService.context.delete(deletedCoffee)
+        try? self.coreDataService.saveContext()
     }
 }
 
@@ -50,6 +72,15 @@ extension CoffeeManager {
     }
 
     private func retrieveFavoriteCoffeeData(completion: (([Coffee]) -> Void)?) {
-        completion?(self.coreDataService.fetchFavorites())
+        self.coreDataCoffee = self.coreDataService.fetchFavorites()
+        let coffees = self.coreDataCoffee.map{
+            return Coffee(category: $0.category,
+                          name: $0.name,
+                          urlAlias: $0.urlAlias,
+                          description: $0.summary,
+                          ingredients: $0.ingredients,
+                          preparation: $0.preparation)
+        }
+        completion?(coffees)
     }
 }

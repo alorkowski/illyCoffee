@@ -113,6 +113,16 @@ extension CoffeeListViewController {
         coffeeDetailViewController.coffeeDetailViewModel = CoffeeDetailViewModel(with: coffee)
         self.navigationController?.pushViewController(coffeeDetailViewController, animated: true)
     }
+
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        guard self.coffeeListViewModel.isEditable,
+            editingStyle == .delete
+            else { return }
+        self.coffeeListViewModel.removeCoffee(section: indexPath.section, row: indexPath.row)
+        self.tableView.deleteRows(at: [indexPath], with: .fade)
+    }
 }
 
 // MARK: - UISearchResultsUpdating

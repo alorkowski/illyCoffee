@@ -17,6 +17,18 @@ final class CoffeeListViewModel {
     }
 }
 
+// MARK: - Computed Properties
+extension CoffeeListViewModel {
+    var isEditable: Bool {
+        switch self.state {
+        case .favorited:
+            return true
+        case .featured:
+            return false
+        }
+    }
+}
+
 // MARK: - Methods
 extension CoffeeListViewModel {
     func coffeeCategories(filtered: Bool = false) -> [String] {
@@ -48,6 +60,13 @@ extension CoffeeListViewModel {
 
     func getCoffeeCategory(for section: Int, filtered: Bool = false) -> String {
         return self.coffeeCategories(filtered: filtered)[section]
+    }
+
+    func removeCoffee(section: Int, row: Int) {
+        guard self.isEditable,
+            let coffee = self.coffeeList[self.coffeeCategories()[section]]?.remove(at: row)
+            else { return }
+        CoffeeManager.shared.removeFavorite(coffee)
     }
 }
 
