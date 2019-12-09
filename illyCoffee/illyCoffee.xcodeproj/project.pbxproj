@@ -27,7 +27,7 @@
 		73A8C2C5237CF3D4002BA970 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */; };
 		73A8C2CE237CF3FE002BA970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2CD237CF3FE002BA970 /* Assets.xcassets */; };
 		73A8C2D1237CF3FE002BA970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2CF237CF3FE002BA970 /* LaunchScreen.storyboard */; };
-		73A8C2DC237CF3FF002BA970 /* CoffeeListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2DB237CF3FF002BA970 /* CoffeeListViewModelTests.swift */; };
+		73A8C2DC237CF3FF002BA970 /* CoffeeCollectionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2DB237CF3FF002BA970 /* CoffeeCollectionManagerTests.swift */; };
 		73A8C2E7237CF64F002BA970 /* FeatureTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2E6237CF64F002BA970 /* FeatureTabViewController.swift */; };
 		73A8C2ED237D006F002BA970 /* illyCoffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2EC237D006F002BA970 /* illyCoffee.json */; };
 		73A8C2EF237D0C86002BA970 /* CoffeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2EE237D0C86002BA970 /* CoffeeListViewController.swift */; };
@@ -76,7 +76,7 @@
 		73A8C2D0237CF3FE002BA970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73A8C2D2237CF3FE002BA970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73A8C2D7237CF3FF002BA970 /* illyCoffeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = illyCoffeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		73A8C2DB237CF3FF002BA970 /* CoffeeListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeListViewModelTests.swift; sourceTree = "<group>"; };
+		73A8C2DB237CF3FF002BA970 /* CoffeeCollectionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCollectionManagerTests.swift; sourceTree = "<group>"; };
 		73A8C2DD237CF3FF002BA970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73A8C2E6237CF64F002BA970 /* FeatureTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTabViewController.swift; sourceTree = "<group>"; };
 		73A8C2EC237D006F002BA970 /* illyCoffee.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = illyCoffee.json; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 			children = (
 				73A8C2DD237CF3FF002BA970 /* Info.plist */,
 				73B3D0AC2398BAA8008E674A /* CoffeeDetailViewModelTests.swift */,
-				73A8C2DB237CF3FF002BA970 /* CoffeeListViewModelTests.swift */,
+				73A8C2DB237CF3FF002BA970 /* CoffeeCollectionManagerTests.swift */,
 				73B3D0AA2398B188008E674A /* MockCoffeeData.swift */,
 			);
 			path = illyCoffeeTests;
@@ -393,7 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73B3D0AD2398BAA8008E674A /* CoffeeDetailViewModelTests.swift in Sources */,
-				73A8C2DC237CF3FF002BA970 /* CoffeeListViewModelTests.swift in Sources */,
+				73A8C2DC237CF3FF002BA970 /* CoffeeCollectionManagerTests.swift in Sources */,
 				73B3D0AB2398B188008E674A /* MockCoffeeData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

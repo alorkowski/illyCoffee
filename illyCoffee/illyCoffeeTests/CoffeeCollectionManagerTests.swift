@@ -1,18 +1,17 @@
 import XCTest
 @testable import illyCoffee
 
-final class CoffeeListViewModelTests: XCTestCase {
-    var sut: CoffeeListViewModel!
+final class CoffeeCollectionManagerTests: XCTestCase {
+    var sut: CoffeeCollectionManager!
 
     override func setUp() {
-        self.sut = CoffeeListViewModel(state: .featured, coffeeList: MockCoffeeData.mockData)
+        self.sut = FeaturedCoffeeViewModel(isEditable: false, coffeeCollection: MockCoffeeData.mockData)
     }
 
     override func tearDown() {
         self.sut = nil
     }
 
-    // MARK: Computed Properties
     func testCoffeeCategories() {
         XCTAssertEqual(["A", "B", "C"], self.sut.coffeeCategories(filtered: false))
     }
@@ -25,7 +24,6 @@ final class CoffeeListViewModelTests: XCTestCase {
         XCTAssertEqual(3, self.sut.numberOfSections(filtered: false))
     }
 
-    // MARK: Methods
     func testNumberOfCoffeesInSection() {
         XCTAssertEqual(3, self.sut.numberOfCoffees(in: 0))
         XCTAssertEqual(1, self.sut.numberOfCoffees(in: 1))
