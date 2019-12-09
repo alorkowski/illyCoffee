@@ -11,7 +11,7 @@ final class FeatureTabBarController: UITabBarController {
         featuredVC.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
 
         let favoritedVC = CoffeeListViewController(viewModel: FavoritedCoffeeViewModel(isEditable: true))
-        favoritedVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+        favoritedVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
 
         self.viewControllers = [ UINavigationController(rootViewController: featuredVC),
                                  UINavigationController(rootViewController: favoritedVC)]
