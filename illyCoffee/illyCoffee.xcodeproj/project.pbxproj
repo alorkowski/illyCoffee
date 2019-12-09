@@ -15,7 +15,6 @@
 		7352175A239DA02400FE4CC0 /* FavoriteCoffee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73521758239DA02400FE4CC0 /* FavoriteCoffee+CoreDataClass.swift */; };
 		7352175B239DA02400FE4CC0 /* FavoriteCoffee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73521759239DA02400FE4CC0 /* FavoriteCoffee+CoreDataProperties.swift */; };
 		7352175D239DA80900FE4CC0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7352175C239DA80900FE4CC0 /* NetworkError.swift */; };
-		73521762239DD6C400FE4CC0 /* illyCoffee.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 73521751239D953300FE4CC0 /* illyCoffee.xcdatamodeld */; };
 		73521787239E0A8C00FE4CC0 /* FeaturedCoffeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73521786239E0A8C00FE4CC0 /* FeaturedCoffeeViewModel.swift */; };
 		73521789239E13B000FE4CC0 /* FavoritedCoffeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73521788239E13B000FE4CC0 /* FavoritedCoffeeViewModel.swift */; };
 		7352178B239E188300FE4CC0 /* CoffeeCollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7352178A239E188300FE4CC0 /* CoffeeCollectionManager.swift */; };
@@ -25,6 +24,7 @@
 		73521794239E200100FE4CC0 /* CoffeeCoreDataAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73521793239E200100FE4CC0 /* CoffeeCoreDataAdaptor.swift */; };
 		73521796239E375600FE4CC0 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73521795239E375600FE4CC0 /* Array+Extension.swift */; };
 		73521799239E546E00FE4CC0 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73521798239E546E00FE4CC0 /* EmptyStateView.swift */; };
+		7352179A239F022800FE4CC0 /* illyCoffee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73521751239D953300FE4CC0 /* illyCoffee.xcdatamodeld */; };
 		73A8C2C5237CF3D4002BA970 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */; };
 		73A8C2CE237CF3FE002BA970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2CD237CF3FE002BA970 /* Assets.xcassets */; };
 		73A8C2D1237CF3FE002BA970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2CF237CF3FE002BA970 /* LaunchScreen.storyboard */; };
@@ -341,7 +341,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73521762239DD6C400FE4CC0 /* illyCoffee.xcdatamodeld in Resources */,
 				73A8C2ED237D006F002BA970 /* illyCoffee.json in Resources */,
 				73A8C2D1237CF3FE002BA970 /* LaunchScreen.storyboard in Resources */,
 				73A8C2CE237CF3FE002BA970 /* Assets.xcassets in Resources */,
@@ -362,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7352179A239F022800FE4CC0 /* illyCoffee.xcdatamodeld in Sources */,
 				73521794239E200100FE4CC0 /* CoffeeCoreDataAdaptor.swift in Sources */,
 				73521787239E0A8C00FE4CC0 /* FeaturedCoffeeViewModel.swift in Sources */,
 				7352178F239E191700FE4CC0 /* CoffeeCollectionFilter.swift in Sources */,
