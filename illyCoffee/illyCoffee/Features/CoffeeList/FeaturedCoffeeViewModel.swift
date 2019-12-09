@@ -4,8 +4,10 @@ final class FeaturedCoffeeViewModel: CoffeeCollectionManager {
     private lazy var networkService = NetworkService()
     var coffeeCollection: CoffeeCollection
     var filteredCoffeeCollection: CoffeeCollection = [:]
+    var isEditable: Bool
 
-    init(coffeeCollection: CoffeeCollection? = nil) {
+    init(isEditable: Bool, coffeeCollection: CoffeeCollection? = nil) {
+        self.isEditable = isEditable
         self.coffeeCollection = coffeeCollection ?? CoffeeCollection()
     }
 }

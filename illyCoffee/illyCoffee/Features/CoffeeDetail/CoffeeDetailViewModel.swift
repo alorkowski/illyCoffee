@@ -1,28 +1,18 @@
 import Foundation
 import CoreData
 
-final class CoffeeDetailViewModel {
-    let coffee: Coffee
+final class CoffeeDetailViewModel: CoffeeDetailManager {
+    private let coreDataService = CoreDataService.shared
+    var coffee: Coffee
 
     init(with coffee: Coffee) {
         self.coffee = coffee
     }
 }
 
-// MARK: - Computed Properties
+// MARK: CoffeeCoreDataAdaptor Methods
 extension CoffeeDetailViewModel {
-    var numberOfIngredients: Int {
-        return self.coffee.ingredients.count
-    }
-
-    var numberOfPreparations: Int {
-        return self.coffee.preparation.count
+    func addFavorite() {
+        self.coreDataService.save(self.coffee)
     }
 }
-
-// MARK: - CoreData Methods
-//extension CoffeeDetailViewModel {
-//    func save() {
-//        CoffeeManager.shared.addFavorite(self.coffee)
-//    }
-//}

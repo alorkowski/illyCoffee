@@ -36,7 +36,7 @@ extension CoffeeDetailViewController {
 // MARK: @objc Methods
 extension CoffeeDetailViewController {
     @objc func saveCoffeeToFavorites() {
-//        self.coffeeDetailViewModel.save()
+        self.coffeeDetailViewModel.addFavorite()
         self.navigationController?.popViewController(animated: true)
     }
 

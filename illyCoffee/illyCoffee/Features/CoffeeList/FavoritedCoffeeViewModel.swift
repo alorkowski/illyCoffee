@@ -1,11 +1,13 @@
 import Foundation
 
 final class FavoritedCoffeeViewModel: CoffeeCollectionManager {
-    private lazy var coreDataService = CoreDataService()
+    private var coreDataService = CoreDataService.shared
     var coffeeCollection: CoffeeCollection
     var filteredCoffeeCollection: CoffeeCollection = [:]
+    var isEditable: Bool
 
-    init(coffeeCollection: CoffeeCollection? = nil) {
+    init(isEditable: Bool, coffeeCollection: CoffeeCollection? = nil) {
+        self.isEditable = isEditable
         self.coffeeCollection = coffeeCollection ?? CoffeeCollection()
     }
 }
@@ -30,7 +32,7 @@ extension FavoritedCoffeeViewModel {
     }
 }
 
-// MARK: - Methods
+// MARK: - CoffeeCoreDataAdaptor Methods
 extension FavoritedCoffeeViewModel {
     func addFavorite(_ coffee: Coffee) {
         guard let category = self.coffeeCollection[coffee.category],
@@ -40,10 +42,17 @@ extension FavoritedCoffeeViewModel {
         self.coreDataService.save(coffee)
     }
 
-    func removeFavorite(section: Int, row: Int) {
+    func deleteFavorite(in section: Int, for row: Int) {
         guard let coffee = self.coffeeCollection[self.coffeeCategories()[section]]?.remove(at: row)
             else { return }
-//        self.coreDataService.context.delete(coffee)
+        let favoriteCoffee = FavoriteCoffee(context: coreDataService.context)
+        favoriteCoffee.category = coffee.category
+        favoriteCoffee.name = coffee.name
+        favoriteCoffee.urlAlias = coffee.urlAlias
+        favoriteCoffee.summary = coffee.description
+        favoriteCoffee.ingredients = coffee.ingredients
+        favoriteCoffee.preparation = coffee.preparation
+        self.coreDataService.context.delete(favoriteCoffee)
         try? self.coreDataService.saveContext()
     }
 }

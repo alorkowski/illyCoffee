@@ -2,6 +2,9 @@ import Foundation
 import CoreData
 
 final class CoreDataService {
+    static let shared = CoreDataService()
+    private init() {}
+
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "illyCoffee")
         container.loadPersistentStores{ (storeDescription, error) in

@@ -17,7 +17,6 @@ final class CoffeeListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = AppData.Colors.featuredCoffee
-        self.title = AppData.title
         self.setupNavigationBar()
         self.setupTableView()
         self.setupSearchController()
@@ -34,6 +33,7 @@ final class CoffeeListViewController: UITableViewController {
 // MARK: - Setup Methods
 extension CoffeeListViewController {
     private func setupNavigationBar() {
+        self.title = AppData.title
         self.navigationController?.navigationBar.backgroundColor = AppData.Colors.featuredCoffee
         self.navigationController?.navigationBar.barTintColor = AppData.Colors.featuredCoffee
         self.navigationController?.navigationBar.isTranslucent = false
@@ -114,15 +114,15 @@ extension CoffeeListViewController {
         self.navigationController?.pushViewController(coffeeDetailViewController, animated: true)
     }
 
-//    override func tableView(_ tableView: UITableView,
-//                            commit editingStyle: UITableViewCell.EditingStyle,
-//                            forRowAt indexPath: IndexPath) {
-//        guard self.viewModel.isEditable,
-//            editingStyle == .delete
-//            else { return }
-//        self.viewModel.removeCoffee(section: indexPath.section, row: indexPath.row)
-//        self.tableView.deleteRows(at: [indexPath], with: .fade)
-//    }
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        guard self.viewModel.isEditable,
+            editingStyle == .delete
+            else { return }
+        self.viewModel.deleteFavorite(in: indexPath.section, for: indexPath.row)
+        self.tableView.deleteRows(at: [indexPath], with: .fade)
+    }
 }
 
 // MARK: - UISearchResultsUpdating

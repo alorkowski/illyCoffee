@@ -3,12 +3,14 @@ import Foundation
 typealias CoffeeCollection = [String: CoffeeArray]
 typealias CoffeeArray = [Coffee]
 
-protocol CoffeeCollectionManager: CoffeeCollectionAccessor, CoffeeCollectionFilter {
+protocol CoffeeCollectionManager: CoffeeCollectionAccessor, CoffeeCollectionFilter, CoffeeCoreDataAdaptor {
     var coffeeCollection: CoffeeCollection { get set }
     var filteredCoffeeCollection: CoffeeCollection { get set }
+    var isEditable: Bool { get set }
     func getCoffeeCollection(completion: (() -> Void)?)
 }
 
+// MARK: - CoffeeCollectionAccessor Protocol Extension
 extension CoffeeCollectionManager {
     func coffeeCategories(filtered: Bool = false) -> [String] {
         return filtered ? self.filteredCoffeeCollection.keys.sorted() : self.coffeeCollection.keys.sorted()
