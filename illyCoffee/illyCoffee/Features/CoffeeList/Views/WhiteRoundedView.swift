@@ -17,7 +17,7 @@ final class WhiteRoundedView: UIView {
     }
 }
 
-// MARK: - Setup Methods
+// MARK: - Methods
 extension WhiteRoundedView {
     func showActivityIndicator() {
         self.activityView = UIActivityIndicatorView(style: .gray)
@@ -31,5 +31,26 @@ extension WhiteRoundedView {
         self.activityView?.stopAnimating()
         self.activityView?.removeFromSuperview()
         self.activityView = nil
+    }
+}
+
+// MARK: - Touch Methods
+extension WhiteRoundedView {
+    enum HighlightState {
+        case highlight
+        case unhighlight
+    }
+
+    func animate(state: HighlightState) {
+        switch state {
+        case .highlight:
+            self.backgroundColor = .lightGray
+        case .unhighlight:
+            UIView.animate(withDuration: 0.5,
+                           delay: 0.0,
+                           options: [],
+                           animations: { self.backgroundColor = .white },
+                           completion: nil)
+        }
     }
 }

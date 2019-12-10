@@ -120,6 +120,7 @@ extension CoffeeListViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = CoffeeTableViewCell.dequeue(from: tableView, for: indexPath)
         cell.configure(with: self.viewModel.getCoffee(for: indexPath, filtered: self.isFiltering))
+        cell.selectionStyle = .none
         return cell
     }
 
@@ -139,7 +140,6 @@ extension CoffeeListViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
         guard let coffee = self.viewModel.getCoffee(for: indexPath, filtered: self.isFiltering)
             else { return }
         let coffeeDetailViewController = CoffeeDetailViewController()
@@ -164,6 +164,14 @@ extension CoffeeListViewController {
         self.viewModel.delete(category: category)
         self.tableView.deleteSections(IndexSet(integer: indexPath.section), with: .fade)
         self.toggleEmptyState()
+    }
+
+    override func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        (tableView.cellForRow(at: indexPath) as? CoffeeTableViewCell)?.animate(state: .highlight)
+    }
+
+    override func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        (tableView.cellForRow(at: indexPath) as? CoffeeTableViewCell)?.animate(state: .unhighlight)
     }
 }
 

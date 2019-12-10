@@ -94,3 +94,10 @@ extension CoffeeTableViewCell {
         }
     }
 }
+
+// MARK: - Touch Methods
+extension CoffeeTableViewCell {
+    func animate(state: WhiteRoundedView.HighlightState) {
+        self.mainView.animate(state: state)
+    }
+}
