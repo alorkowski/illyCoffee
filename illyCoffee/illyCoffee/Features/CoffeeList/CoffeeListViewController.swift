@@ -91,6 +91,7 @@ extension CoffeeListViewController {
 
     private func hideActivityIndicator() {
         self.activityView?.stopAnimating()
+        self.activityView?.removeFromSuperview()
         self.activityView = nil
     }
 

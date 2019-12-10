@@ -63,17 +63,34 @@ extension CoffeeTableViewCell {
 
 // MARK: - Methods
 extension CoffeeTableViewCell {
+    private func showActivityIndicator() {
+        self.isUserInteractionEnabled = false
+        self.coffeeImage.isHidden = true
+        self.coffeeLabel.isHidden = true
+        self.mainView.showActivityIndicator()
+    }
+
+    private func hideActivityIndicator() {
+        self.isUserInteractionEnabled = true
+        self.coffeeImage.isHidden = false
+        self.coffeeLabel.isHidden = false
+        self.mainView.hideActivityIndicator()
+    }
+
     func configure(with coffee: Coffee?) {
         guard let coffee = coffee else { return }
-        ImageCache.shared.retreiveImage(for: coffee.urlAlias) {
-            [weak self] result in
-            switch result {
-            case .success(let image):
-                self?.coffeeImage.image = image
-            case .failure:
-                self?.coffeeImage.image = UIImage()
+        ImageCache.shared.retrieveImage(for: coffee.urlAlias, animation: self.showActivityIndicator) {
+            [weak self, coffee] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let image):
+                    self?.coffeeImage.image = image
+                case .failure:
+                    self?.coffeeImage.image = UIImage()
+                }
+                self?.coffeeLabel.text = coffee.name
+                self?.hideActivityIndicator()
             }
         }
-        self.coffeeLabel.text = coffee.name
     }
 }

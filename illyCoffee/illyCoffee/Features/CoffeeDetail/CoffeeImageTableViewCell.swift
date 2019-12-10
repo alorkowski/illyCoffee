@@ -21,8 +21,8 @@ extension CoffeeImageTableViewCell {
         self.coffeeImage.contentMode = .scaleAspectFit
         self.coffeeImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.coffeeImage.topAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.topAnchor),
-            self.coffeeImage.bottomAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.bottomAnchor),
+            self.coffeeImage.topAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.topAnchor, constant: 8),
+            self.coffeeImage.bottomAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.bottomAnchor, constant: -8),
             self.coffeeImage.leadingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.leadingAnchor,
                                                       constant: 8),
             self.coffeeImage.trailingAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.trailingAnchor,
@@ -35,13 +35,15 @@ extension CoffeeImageTableViewCell {
 extension CoffeeImageTableViewCell {
     func configure(with coffee: Coffee?) {
         guard let coffee = coffee else { return }
-        ImageCache.shared.retreiveImage(for: coffee.urlAlias) {
+        ImageCache.shared.retrieveImage(for: coffee.urlAlias, animation: nil) {
             [weak self] result in
-            switch result {
-            case .success(let image):
-                self?.coffeeImage.image = image
-            case .failure:
-                self?.coffeeImage.image = UIImage()
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let image):
+                    self?.coffeeImage.image = image
+                case .failure:
+                    self?.coffeeImage.image = UIImage()
+                }
             }
         }
     }

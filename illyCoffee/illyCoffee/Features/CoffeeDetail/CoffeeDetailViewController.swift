@@ -16,6 +16,7 @@ extension CoffeeDetailViewController {
     struct CoffeeDetailTraits {
         static let numberOfSections: Int = 4
         static let heightForRowAt: CGFloat = 44
+        static let heightForCoffeeImageTableViewCell: CGFloat = min(400, UIScreen.main.bounds.height / 2)
         static let heightForHeaderInSection: CGFloat = 70
         static let titleForHeaderInIngredientsSection: String = "Ingredients"
         static let titleForHeaderInPreparationSection: String = "Preparation"
@@ -126,7 +127,9 @@ extension CoffeeDetailViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
-        case 0, 1, 3:
+        case 0:
+            return CoffeeDetailTraits.heightForCoffeeImageTableViewCell
+        case 1, 3:
             return UITableView.automaticDimension
         case 2:
             return max(CoffeeDetailTraits.heightForRowAt, UITableView.automaticDimension)
