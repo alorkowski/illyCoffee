@@ -150,6 +150,11 @@ extension CoffeeListViewController {
             else { return }
         self.viewModel.deleteFavorite(in: indexPath.section, for: indexPath.row)
         self.tableView.deleteRows(at: [indexPath], with: .fade)
+        let category = self.viewModel.coffeeCategories()[indexPath.section]
+        guard self.viewModel.isEmpty(category) else { return }
+        self.viewModel.delete(category: category)
+        self.tableView.deleteSections(IndexSet(integer: indexPath.section), with: .fade)
+        self.toggleEmptyState()
     }
 }
 

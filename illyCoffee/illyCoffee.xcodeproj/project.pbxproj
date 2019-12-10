@@ -42,6 +42,7 @@
 		73B3D0AB2398B188008E674A /* MockCoffeeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B3D0AA2398B188008E674A /* MockCoffeeData.swift */; };
 		73B3D0AD2398BAA8008E674A /* CoffeeDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B3D0AC2398BAA8008E674A /* CoffeeDetailViewModelTests.swift */; };
 		73E4CAEE239F63A900B479C9 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E4CAED239F63A900B479C9 /* OrderedDictionary.swift */; };
+		73E4CAF1239F8BFE00B479C9 /* CoffeeCollectionNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E4CAF0239F8BFD00B479C9 /* CoffeeCollectionNetworking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		73B3D0AA2398B188008E674A /* MockCoffeeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoffeeData.swift; sourceTree = "<group>"; };
 		73B3D0AC2398BAA8008E674A /* CoffeeDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailViewModelTests.swift; sourceTree = "<group>"; };
 		73E4CAED239F63A900B479C9 /* OrderedDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
+		73E4CAF0239F8BFD00B479C9 /* CoffeeCollectionNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCollectionNetworking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 				7352178C239E18BC00FE4CC0 /* CoffeeCollectionAccessor.swift */,
 				7352178E239E191700FE4CC0 /* CoffeeCollectionFilter.swift */,
 				7352178A239E188300FE4CC0 /* CoffeeCollectionManager.swift */,
+				73E4CAF0239F8BFD00B479C9 /* CoffeeCollectionNetworking.swift */,
 				73521793239E200100FE4CC0 /* CoffeeCoreDataAdaptor.swift */,
 				73521791239E1ED700FE4CC0 /* CoffeeDetailManager.swift */,
 				73A8C2F0237D0CC5002BA970 /* ProgrammaticView.swift */,
@@ -398,6 +401,7 @@
 				73521792239E1ED700FE4CC0 /* CoffeeDetailManager.swift in Sources */,
 				73A8C2F6237D0DC7002BA970 /* Coffee.swift in Sources */,
 				7352175B239DA02400FE4CC0 /* FavoriteCoffee+CoreDataProperties.swift in Sources */,
+				73E4CAF1239F8BFE00B479C9 /* CoffeeCollectionNetworking.swift in Sources */,
 				7352174C239D1BFC00FE4CC0 /* AppData.swift in Sources */,
 				73521789239E13B000FE4CC0 /* FavoritedCoffeeViewModel.swift in Sources */,
 				7352178B239E188300FE4CC0 /* CoffeeCollectionManager.swift in Sources */,

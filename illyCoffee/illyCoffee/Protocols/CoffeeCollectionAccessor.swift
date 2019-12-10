@@ -7,4 +7,5 @@ protocol CoffeeCollectionAccessor {
     func numberOfCoffees(in section: Int, filtered: Bool) -> Int
     func getCoffee(for indexPath: IndexPath, filtered: Bool) -> Coffee?
     func getCoffeeCategory(for section: Int, filtered: Bool) -> String
+    func isEmpty(_ category: String) -> Bool
 }

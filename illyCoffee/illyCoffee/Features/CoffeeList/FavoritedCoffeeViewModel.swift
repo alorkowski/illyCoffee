@@ -36,9 +36,8 @@ extension FavoritedCoffeeViewModel {
 // MARK: - CoffeeCoreDataAdaptor Methods
 extension FavoritedCoffeeViewModel {
     func deleteFavorite(in section: Int, for row: Int) {
-        guard let coffee = self.coffeeCollection[self.coffeeCategories()[section]]?.remove(at: row)
-            else { return }
+        let category = self.coffeeCategories()[section]
+        guard let coffee = self.coffeeCollection[category]?.remove(at: row) else { return }
         self.coreDataService.delete(coffee)
-        try? self.coreDataService.saveContext()
     }
 }

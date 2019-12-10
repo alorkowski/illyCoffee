@@ -1,14 +1,21 @@
 import Foundation
 
-typealias CoffeeCollection = OrderedDictionary<String, CoffeeArray>
 typealias CoffeeArray = [Coffee]
+typealias CoffeeCollection = OrderedDictionary<String, CoffeeArray>
+typealias CoffeeCollectionTraits = CoffeeCollectionAccessor & CoffeeCollectionFilter & CoffeeCollectionNetworking & CoffeeCoreDataAdaptor
 
-protocol CoffeeCollectionManager: AnyObject, CoffeeCollectionAccessor, CoffeeCollectionFilter, CoffeeCoreDataAdaptor {
+protocol CoffeeCollectionManager: AnyObject, CoffeeCollectionTraits {
     var coffeeCollection: CoffeeCollection { get set }
     var filteredCoffeeCollection: CoffeeCollection { get set }
     var isEditable: Bool { get set }
-    func getCoffeeCollection(completion: (() -> Void)?)
-    func updateCoffeeCollection(completion: (() -> Void)?)
+    func delete(category: String)
+}
+
+// MARK: - CoffeeCollectionManager Protocol Extension
+extension CoffeeCollectionManager {
+    func delete(category: String) {
+        self.coffeeCollection[category] = nil
+    }
 }
 
 // MARK: - CoffeeCollectionAccessor Protocol Extension
@@ -42,6 +49,10 @@ extension CoffeeCollectionManager {
 
     func getCoffeeCategory(for section: Int, filtered: Bool = false) -> String {
         return self.coffeeCategories(filtered: filtered)[section]
+    }
+
+    func isEmpty(_ category: String) -> Bool {
+        return self.coffeeCollection[category]?.count == 0
     }
 }
 
