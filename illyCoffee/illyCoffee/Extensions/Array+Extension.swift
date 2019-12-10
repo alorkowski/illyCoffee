@@ -11,8 +11,4 @@ extension Array where Iterator.Element: FavoriteCoffee {
                    preparation: $0.preparation)
         }
     }
-
-    func convertToCoffeeCollection() -> CoffeeCollection {
-        return Dictionary(grouping: self.convertToCoffeeArray()){ $0.category }
-    }
 }

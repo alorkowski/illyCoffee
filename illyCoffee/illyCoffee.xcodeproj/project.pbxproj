@@ -41,6 +41,7 @@
 		73A8C303237D1DED002BA970 /* CoffeeLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C302237D1DED002BA970 /* CoffeeLabelTableViewCell.swift */; };
 		73B3D0AB2398B188008E674A /* MockCoffeeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B3D0AA2398B188008E674A /* MockCoffeeData.swift */; };
 		73B3D0AD2398BAA8008E674A /* CoffeeDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B3D0AC2398BAA8008E674A /* CoffeeDetailViewModelTests.swift */; };
+		73E4CAEE239F63A900B479C9 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E4CAED239F63A900B479C9 /* OrderedDictionary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		73A8C302237D1DED002BA970 /* CoffeeLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeLabelTableViewCell.swift; sourceTree = "<group>"; };
 		73B3D0AA2398B188008E674A /* MockCoffeeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoffeeData.swift; sourceTree = "<group>"; };
 		73B3D0AC2398BAA8008E674A /* CoffeeDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailViewModelTests.swift; sourceTree = "<group>"; };
+		73E4CAED239F63A900B479C9 /* OrderedDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			children = (
 				7352174B239D1BFC00FE4CC0 /* AppData.swift */,
 				73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */,
+				73E4CAEF239F74C300B479C9 /* Decorators */,
 				73521797239E376100FE4CC0 /* Extensions */,
 				73A8C2EA237CF6C4002BA970 /* Features */,
 				73A8C2F7237D0E45002BA970 /* Models */,
@@ -258,6 +261,14 @@
 				73A8C302237D1DED002BA970 /* CoffeeLabelTableViewCell.swift */,
 			);
 			path = CoffeeDetail;
+			sourceTree = "<group>";
+		};
+		73E4CAEF239F74C300B479C9 /* Decorators */ = {
+			isa = PBXGroup;
+			children = (
+				73E4CAED239F63A900B479C9 /* OrderedDictionary.swift */,
+			);
+			path = Decorators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +386,7 @@
 				73A8C2FC237D1925002BA970 /* CoffeeDetailViewController.swift in Sources */,
 				73521799239E546E00FE4CC0 /* EmptyStateView.swift in Sources */,
 				73521796239E375600FE4CC0 /* Array+Extension.swift in Sources */,
+				73E4CAEE239F63A900B479C9 /* OrderedDictionary.swift in Sources */,
 				7352175D239DA80900FE4CC0 /* NetworkError.swift in Sources */,
 				73A8C303237D1DED002BA970 /* CoffeeLabelTableViewCell.swift in Sources */,
 				73A8C2E7237CF64F002BA970 /* FeatureTabViewController.swift in Sources */,

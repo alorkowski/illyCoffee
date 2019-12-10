@@ -3,7 +3,7 @@ import Foundation
 final class FeaturedCoffeeViewModel: CoffeeCollectionManager {
     private lazy var networkService = NetworkService()
     var coffeeCollection: CoffeeCollection
-    var filteredCoffeeCollection: CoffeeCollection = [:]
+    var filteredCoffeeCollection = CoffeeCollection()
     var isEditable: Bool
 
     init(isEditable: Bool, coffeeCollection: CoffeeCollection? = nil) {
@@ -19,7 +19,7 @@ extension FeaturedCoffeeViewModel {
             [weak self] (result: Result<CoffeeArray, NetworkError>) in
             switch result {
             case .success(let data):
-                self?.coffeeCollection = Dictionary(grouping: data){ $0.category }
+                self?.coffeeCollection = CoffeeCollection(from: Dictionary(grouping: data){ $0.category })
                 completion?()
             case .failure(let error):
                 fatalError("Error: \(error.localizedDescription)")

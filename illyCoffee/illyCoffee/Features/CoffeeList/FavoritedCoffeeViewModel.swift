@@ -3,7 +3,7 @@ import Foundation
 final class FavoritedCoffeeViewModel: CoffeeCollectionManager {
     private var coreDataService = CoreDataService.shared
     var coffeeCollection: CoffeeCollection
-    var filteredCoffeeCollection: CoffeeCollection = [:]
+    var filteredCoffeeCollection = CoffeeCollection()
     var isEditable: Bool
 
     init(isEditable: Bool, coffeeCollection: CoffeeCollection? = nil) {
@@ -19,15 +19,15 @@ extension FavoritedCoffeeViewModel {
             [weak self] in
             defer{ completion?() }
             guard let result = self?.coreDataService.fetchFavorites() else { return }
-            self?.coffeeCollection = Dictionary(grouping: result){ $0.category }
+            self?.coffeeCollection = CoffeeCollection(from: Dictionary(grouping: result){ $0.category })
         }
     }
 
     func updateCoffeeCollection(completion: (() -> Void)?) {
         DispatchQueue.global(qos: .userInitiated).async {
             [weak self] in
-            guard let collection = self?.coreDataService.updateWithLatest() else { return }
-            self?.coffeeCollection = collection
+            guard let result = self?.coreDataService.updateWithLatest() else { return }
+            self?.coffeeCollection = CoffeeCollection(from: Dictionary(grouping: result){ $0.category })
             completion?()
         }
     }

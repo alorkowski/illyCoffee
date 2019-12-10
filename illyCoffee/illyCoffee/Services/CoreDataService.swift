@@ -67,7 +67,7 @@ extension CoreDataService {
         }
     }
 
-    func updateWithLatest() -> CoffeeCollection {
-        return self.managedObjects.convertToCoffeeCollection()
+    func updateWithLatest() -> CoffeeArray {
+        return self.managedObjects.convertToCoffeeArray()
     }
 }
