@@ -16,6 +16,7 @@ final class CoffeeLabelTableViewCell: UITableViewCell, ProgrammaticView {
 // MARK: - Setup Methods
 extension CoffeeLabelTableViewCell {
     private func setupLabelView() {
+        self.coffeeLabel.backgroundColor = .white
         self.contentView.addSubview(self.coffeeLabel)
         self.coffeeLabel.numberOfLines = 0
         self.coffeeLabel.textAlignment = .left

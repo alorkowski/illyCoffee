@@ -5,6 +5,7 @@ final class CoffeeDetailViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = AppData.Colors.illyCoffee
         self.title = self.coffeeDetailViewModel.name
         self.setupNavigationBar()
         self.setupTableView()
@@ -40,8 +41,16 @@ extension CoffeeDetailViewController {
     private func setupTableView() {
         self.tableView.estimatedRowHeight = CoffeeDetailTraits.heightForRowAt
         self.tableView.allowsSelection = false
+        self.tableView.backgroundColor = AppData.Colors.illyCoffee
+        self.setupTableFooter()
         CoffeeImageTableViewCell.register(with: self.tableView)
         CoffeeLabelTableViewCell.register(with: self.tableView)
+    }
+
+    private func setupTableFooter() {
+        let footerView = UIView()
+        footerView.backgroundColor = .white
+        self.tableView.tableFooterView = footerView
     }
 }
 
@@ -102,6 +111,7 @@ extension CoffeeDetailViewController {
         case 2:
             let cell = CoffeeLabelTableViewCell.dequeue(from: tableView, for: indexPath)
             cell.configure(with: self.coffeeDetailViewModel.ingredients[indexPath.row])
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             return cell
         case 3:
             let cell = CoffeeLabelTableViewCell.dequeue(from: tableView, for: indexPath)
