@@ -16,7 +16,7 @@ final class CoffeeListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = AppData.Colors.featuredCoffee
+        self.view.backgroundColor = AppData.Colors.illyCoffee
         self.setupNavigationBar()
         self.setupTableView()
         self.setupSearchController()
@@ -43,18 +43,26 @@ final class CoffeeListViewController: UITableViewController {
     }
 }
 
+// MARK: - CoffeeListTraits
+extension CoffeeListViewController {
+    struct CoffeeListTraits {
+        static let heightForRowAt: CGFloat = 70
+        static let heightForHeaderInSection: CGFloat = 50
+    }
+}
+
 // MARK: - Setup Methods
 extension CoffeeListViewController {
     private func setupNavigationBar() {
         self.title = AppData.title
-        self.navigationController?.navigationBar.backgroundColor = AppData.Colors.featuredCoffee
-        self.navigationController?.navigationBar.barTintColor = AppData.Colors.featuredCoffee
+        self.navigationController?.navigationBar.backgroundColor = AppData.Colors.illyCoffee
+        self.navigationController?.navigationBar.barTintColor = AppData.Colors.illyCoffee
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.isOpaque = true
     }
 
     private func setupTableView() {
-        self.tableView.estimatedRowHeight = 50
+        self.tableView.estimatedRowHeight = CoffeeListTraits.heightForRowAt
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.separatorStyle = .none
         CoffeeTableViewCell.register(with: self.tableView)
@@ -122,11 +130,11 @@ extension CoffeeListViewController {
 // MARK: - UITableViewDelegate
 extension CoffeeListViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return CoffeeListTraits.heightForRowAt
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return CoffeeListTraits.heightForHeaderInSection
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

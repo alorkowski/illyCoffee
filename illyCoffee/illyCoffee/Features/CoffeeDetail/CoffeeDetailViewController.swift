@@ -2,12 +2,23 @@ import UIKit
 
 final class CoffeeDetailViewController: UITableViewController {
     var coffeeDetailViewModel: CoffeeDetailViewModel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = coffeeDetailViewModel.coffee.name
+        self.title = self.coffeeDetailViewModel.name
         self.setupNavigationBar()
         self.setupTableView()
+    }
+}
+
+// MARK: - CoffeeDetailTraits
+extension CoffeeDetailViewController {
+    struct CoffeeDetailTraits {
+        static let numberOfSections: Int = 4
+        static let heightForRowAt: CGFloat = 44
+        static let heightForHeaderInSection: CGFloat = 70
+        static let titleForHeaderInIngredientsSection: String = "Ingredients"
+        static let titleForHeaderInPreparationSection: String = "Preparation"
     }
 }
 
@@ -26,7 +37,7 @@ extension CoffeeDetailViewController {
     }
 
     private func setupTableView() {
-        self.tableView.estimatedRowHeight = 44
+        self.tableView.estimatedRowHeight = CoffeeDetailTraits.heightForRowAt
         self.tableView.allowsSelection = false
         CoffeeImageTableViewCell.register(with: self.tableView)
         CoffeeLabelTableViewCell.register(with: self.tableView)
@@ -48,7 +59,7 @@ extension CoffeeDetailViewController {
 // MARK: - UITableViewDataSource
 extension CoffeeDetailViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return CoffeeDetailTraits.numberOfSections
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,9 +78,9 @@ extension CoffeeDetailViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 2:
-            return "Ingredients"
+            return CoffeeDetailTraits.titleForHeaderInIngredientsSection
         case 3:
-            return "Preparation"
+            return CoffeeDetailTraits.titleForHeaderInPreparationSection
         default:
             return nil
         }
@@ -84,16 +95,16 @@ extension CoffeeDetailViewController {
             return cell
         case 1:
             let cell = CoffeeLabelTableViewCell.dequeue(from: tableView, for: indexPath)
-            cell.configure(with: self.coffeeDetailViewModel.coffee.description)
+            cell.configure(with: self.coffeeDetailViewModel.description)
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
         case 2:
             let cell = CoffeeLabelTableViewCell.dequeue(from: tableView, for: indexPath)
-            cell.configure(with: self.coffeeDetailViewModel.coffee.ingredients[indexPath.row])
+            cell.configure(with: self.coffeeDetailViewModel.ingredients[indexPath.row])
             return cell
         case 3:
             let cell = CoffeeLabelTableViewCell.dequeue(from: tableView, for: indexPath)
-            cell.configure(with: self.coffeeDetailViewModel.coffee.preparation[indexPath.row])
+            cell.configure(with: self.coffeeDetailViewModel.preparation[indexPath.row])
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
         default:
@@ -107,7 +118,7 @@ extension CoffeeDetailViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case 2, 3:
-            return 44
+            return CoffeeDetailTraits.heightForRowAt
         default:
             return 0
         }
@@ -118,9 +129,9 @@ extension CoffeeDetailViewController {
         case 0, 1, 3:
             return UITableView.automaticDimension
         case 2:
-            return max(44, UITableView.automaticDimension)
+            return max(CoffeeDetailTraits.heightForRowAt, UITableView.automaticDimension)
         default:
-            return 44
+            return CoffeeDetailTraits.heightForRowAt
         }
     }
 }
