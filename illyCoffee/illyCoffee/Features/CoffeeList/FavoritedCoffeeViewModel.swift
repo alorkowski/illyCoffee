@@ -16,27 +16,19 @@ final class FavoritedCoffeeViewModel: CoffeeCollectionManager {
 extension FavoritedCoffeeViewModel {
     func getCoffeeCollection(completion: (() -> Void)?) {
         DispatchQueue.global(qos: .userInitiated).async {
-            self.coffeeCollection = Dictionary(grouping: self.coreDataService.fetchFavorites()){ $0.category }
-            completion?()
+            [weak self] in
+            defer{ completion?() }
+            guard let result = self?.coreDataService.fetchFavorites() else { return }
+            self?.coffeeCollection = Dictionary(grouping: result){ $0.category }
         }
     }
 
     func updateCoffeeCollection(completion: (() -> Void)?) {
         DispatchQueue.global(qos: .userInitiated).async {
-            self.coffeeCollection = self.coreDataService.updateWithLatest()
+            [weak self] in
+            guard let collection = self?.coreDataService.updateWithLatest() else { return }
+            self?.coffeeCollection = collection
             completion?()
-        }
-    }
-}
-
-// MARK: - CoffeeFilter Methods
-extension FavoritedCoffeeViewModel {
-    func filterContentForSearchText(_ searchText: String, completion: @escaping () -> Void) {
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            defer { completion() }
-            guard let coffees = self?.coffeeCollection.values.flatMap({$0}) else { return }
-            let data = CoffeeArray(coffees).filter{ $0.contains(searchText.lowercased()) }
-            self?.filteredCoffeeCollection = Dictionary(grouping: data) { (coffee) in coffee.category }
         }
     }
 }

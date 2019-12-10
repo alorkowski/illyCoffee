@@ -21,7 +21,8 @@ final class CoffeeListViewController: UITableViewController {
         self.setupTableView()
         self.setupSearchController()
         self.showActivityIndicator()
-        self.viewModel.getCoffeeCollection{ [weak self] in
+        self.viewModel.getCoffeeCollection{
+            [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
                 self?.hideActivityIndicator()

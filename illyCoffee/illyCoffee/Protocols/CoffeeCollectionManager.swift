@@ -3,7 +3,7 @@ import Foundation
 typealias CoffeeCollection = [String: CoffeeArray]
 typealias CoffeeArray = [Coffee]
 
-protocol CoffeeCollectionManager: CoffeeCollectionAccessor, CoffeeCollectionFilter, CoffeeCoreDataAdaptor {
+protocol CoffeeCollectionManager: AnyObject, CoffeeCollectionAccessor, CoffeeCollectionFilter, CoffeeCoreDataAdaptor {
     var coffeeCollection: CoffeeCollection { get set }
     var filteredCoffeeCollection: CoffeeCollection { get set }
     var isEditable: Bool { get set }
@@ -42,5 +42,17 @@ extension CoffeeCollectionManager {
 
     func getCoffeeCategory(for section: Int, filtered: Bool = false) -> String {
         return self.coffeeCategories(filtered: filtered)[section]
+    }
+}
+
+// MARK: - CoffeeCollectionFilter Methods
+extension CoffeeCollectionManager {
+    func filterContentForSearchText(_ searchText: String, completion: @escaping () -> Void) {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            defer { completion() }
+            guard let coffees = self?.coffeeCollection.values.flatMap({$0}) else { return }
+            let data = CoffeeArray(coffees).filter{ $0.contains(searchText.lowercased()) }
+            self?.filteredCoffeeCollection = Dictionary(grouping: data) { (coffee) in coffee.category }
+        }
     }
 }

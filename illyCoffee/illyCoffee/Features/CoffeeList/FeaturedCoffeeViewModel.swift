@@ -31,15 +31,3 @@ extension FeaturedCoffeeViewModel {
         // Do nothing
     }
 }
-
-// MARK: - CoffeeFilter Methods
-extension FeaturedCoffeeViewModel {
-    func filterContentForSearchText(_ searchText: String, completion: @escaping () -> Void) {
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            defer { completion() }
-            guard let coffees = self?.coffeeCollection.values.flatMap({$0}) else { return }
-            let data = CoffeeArray(coffees).filter{ $0.contains(searchText.lowercased()) }
-            self?.filteredCoffeeCollection = Dictionary(grouping: data) { (coffee) in coffee.category }
-        }
-    }
-}
