@@ -25,10 +25,17 @@
 		73521796239E375600FE4CC0 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73521795239E375600FE4CC0 /* Array+Extension.swift */; };
 		73521799239E546E00FE4CC0 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73521798239E546E00FE4CC0 /* EmptyStateView.swift */; };
 		7352179A239F022800FE4CC0 /* illyCoffee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73521751239D953300FE4CC0 /* illyCoffee.xcdatamodeld */; };
+		738AF1E523A05A4000950E75 /* OrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738AF1E423A05A4000950E75 /* OrderedDictionaryTests.swift */; };
+		738AF1E723A0678300950E75 /* CoffeeLabelTableViewCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738AF1E623A0678300950E75 /* CoffeeLabelTableViewCellTest.swift */; };
+		738AF1E923A06A0900950E75 /* FavoritedCoffeeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738AF1E823A06A0900950E75 /* FavoritedCoffeeViewModelTests.swift */; };
+		738AF1EB23A06BB900950E75 /* MockPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738AF1EA23A06BB900950E75 /* MockPersistenceService.swift */; };
+		738AF1ED23A07E3200950E75 /* MockNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738AF1EC23A07E3200950E75 /* MockNetworkingService.swift */; };
+		738AF1F023A086DB00950E75 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738AF1EF23A086DB00950E75 /* PersistenceService.swift */; };
+		738AF1F223A0872800950E75 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738AF1F123A0872800950E75 /* NetworkingService.swift */; };
 		73A8C2C5237CF3D4002BA970 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */; };
 		73A8C2CE237CF3FE002BA970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2CD237CF3FE002BA970 /* Assets.xcassets */; };
 		73A8C2D1237CF3FE002BA970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2CF237CF3FE002BA970 /* LaunchScreen.storyboard */; };
-		73A8C2DC237CF3FF002BA970 /* CoffeeCollectionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2DB237CF3FF002BA970 /* CoffeeCollectionManagerTests.swift */; };
+		73A8C2DC237CF3FF002BA970 /* FeaturedCoffeeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2DB237CF3FF002BA970 /* FeaturedCoffeeViewModelTests.swift */; };
 		73A8C2E7237CF64F002BA970 /* FeatureTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2E6237CF64F002BA970 /* FeatureTabViewController.swift */; };
 		73A8C2ED237D006F002BA970 /* illyCoffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 73A8C2EC237D006F002BA970 /* illyCoffee.json */; };
 		73A8C2EF237D0C86002BA970 /* CoffeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A8C2EE237D0C86002BA970 /* CoffeeListViewController.swift */; };
@@ -74,13 +81,20 @@
 		73521793239E200100FE4CC0 /* CoffeeCoreDataAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCoreDataAdaptor.swift; sourceTree = "<group>"; };
 		73521795239E375600FE4CC0 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		73521798239E546E00FE4CC0 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		738AF1E423A05A4000950E75 /* OrderedDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedDictionaryTests.swift; sourceTree = "<group>"; };
+		738AF1E623A0678300950E75 /* CoffeeLabelTableViewCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeLabelTableViewCellTest.swift; sourceTree = "<group>"; };
+		738AF1E823A06A0900950E75 /* FavoritedCoffeeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritedCoffeeViewModelTests.swift; sourceTree = "<group>"; };
+		738AF1EA23A06BB900950E75 /* MockPersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPersistenceService.swift; sourceTree = "<group>"; };
+		738AF1EC23A07E3200950E75 /* MockNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkingService.swift; sourceTree = "<group>"; };
+		738AF1EF23A086DB00950E75 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		738AF1F123A0872800950E75 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		73A8C2C1237CF3D4002BA970 /* illyCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = illyCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A8C2C4237CF3D4002BA970 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73A8C2CD237CF3FE002BA970 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73A8C2D0237CF3FE002BA970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73A8C2D2237CF3FE002BA970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73A8C2D7237CF3FF002BA970 /* illyCoffeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = illyCoffeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		73A8C2DB237CF3FF002BA970 /* CoffeeCollectionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCollectionManagerTests.swift; sourceTree = "<group>"; };
+		73A8C2DB237CF3FF002BA970 /* FeaturedCoffeeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCoffeeViewModelTests.swift; sourceTree = "<group>"; };
 		73A8C2DD237CF3FF002BA970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73A8C2E6237CF64F002BA970 /* FeatureTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTabViewController.swift; sourceTree = "<group>"; };
 		73A8C2EC237D006F002BA970 /* illyCoffee.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = illyCoffee.json; sourceTree = "<group>"; };
@@ -146,6 +160,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		738AF1EE23A07E5100950E75 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				73B3D0AA2398B188008E674A /* MockCoffeeData.swift */,
+				738AF1EC23A07E3200950E75 /* MockNetworkingService.swift */,
+				738AF1EA23A06BB900950E75 /* MockPersistenceService.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		73A8C2B8237CF3D4002BA970 = {
 			isa = PBXGroup;
 			children = (
@@ -186,8 +210,11 @@
 			children = (
 				73A8C2DD237CF3FF002BA970 /* Info.plist */,
 				73B3D0AC2398BAA8008E674A /* CoffeeDetailViewModelTests.swift */,
-				73A8C2DB237CF3FF002BA970 /* CoffeeCollectionManagerTests.swift */,
-				73B3D0AA2398B188008E674A /* MockCoffeeData.swift */,
+				738AF1E623A0678300950E75 /* CoffeeLabelTableViewCellTest.swift */,
+				738AF1E823A06A0900950E75 /* FavoritedCoffeeViewModelTests.swift */,
+				73A8C2DB237CF3FF002BA970 /* FeaturedCoffeeViewModelTests.swift */,
+				738AF1E423A05A4000950E75 /* OrderedDictionaryTests.swift */,
+				738AF1EE23A07E5100950E75 /* Mocks */,
 			);
 			path = illyCoffeeTests;
 			sourceTree = "<group>";
@@ -229,6 +256,8 @@
 				73E4CAF0239F8BFD00B479C9 /* CoffeeCollectionNetworking.swift */,
 				73521793239E200100FE4CC0 /* CoffeeCoreDataAdaptor.swift */,
 				73521791239E1ED700FE4CC0 /* CoffeeDetailManager.swift */,
+				738AF1F123A0872800950E75 /* NetworkingService.swift */,
+				738AF1EF23A086DB00950E75 /* PersistenceService.swift */,
 				73A8C2F0237D0CC5002BA970 /* ProgrammaticView.swift */,
 			);
 			path = Protocols;
@@ -386,6 +415,7 @@
 				7352174E239D92BE00FE4CC0 /* CoreDataService.swift in Sources */,
 				73A8C2EF237D0C86002BA970 /* CoffeeListViewController.swift in Sources */,
 				731EA4A0239044880075CACE /* NetworkSevice.swift in Sources */,
+				738AF1F223A0872800950E75 /* NetworkingService.swift in Sources */,
 				73A8C2FC237D1925002BA970 /* CoffeeDetailViewController.swift in Sources */,
 				73521799239E546E00FE4CC0 /* EmptyStateView.swift in Sources */,
 				73521796239E375600FE4CC0 /* Array+Extension.swift in Sources */,
@@ -402,6 +432,7 @@
 				73A8C2F6237D0DC7002BA970 /* Coffee.swift in Sources */,
 				7352175B239DA02400FE4CC0 /* FavoriteCoffee+CoreDataProperties.swift in Sources */,
 				73E4CAF1239F8BFE00B479C9 /* CoffeeCollectionNetworking.swift in Sources */,
+				738AF1F023A086DB00950E75 /* PersistenceService.swift in Sources */,
 				7352174C239D1BFC00FE4CC0 /* AppData.swift in Sources */,
 				73521789239E13B000FE4CC0 /* FavoritedCoffeeViewModel.swift in Sources */,
 				7352178B239E188300FE4CC0 /* CoffeeCollectionManager.swift in Sources */,
@@ -413,7 +444,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				73B3D0AD2398BAA8008E674A /* CoffeeDetailViewModelTests.swift in Sources */,
-				73A8C2DC237CF3FF002BA970 /* CoffeeCollectionManagerTests.swift in Sources */,
+				738AF1ED23A07E3200950E75 /* MockNetworkingService.swift in Sources */,
+				738AF1EB23A06BB900950E75 /* MockPersistenceService.swift in Sources */,
+				738AF1E723A0678300950E75 /* CoffeeLabelTableViewCellTest.swift in Sources */,
+				738AF1E523A05A4000950E75 /* OrderedDictionaryTests.swift in Sources */,
+				738AF1E923A06A0900950E75 /* FavoritedCoffeeViewModelTests.swift in Sources */,
+				73A8C2DC237CF3FF002BA970 /* FeaturedCoffeeViewModelTests.swift in Sources */,
 				73B3D0AB2398B188008E674A /* MockCoffeeData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

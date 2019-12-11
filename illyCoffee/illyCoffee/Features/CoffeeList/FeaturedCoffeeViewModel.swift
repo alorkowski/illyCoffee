@@ -1,14 +1,14 @@
 import Foundation
 
 final class FeaturedCoffeeViewModel: CoffeeCollectionManager {
-    private lazy var networkService = NetworkService()
-    var coffeeCollection: CoffeeCollection
+    private let networkService: NetworkingService!
+    var coffeeCollection = CoffeeCollection()
     var filteredCoffeeCollection = CoffeeCollection()
     var isEditable: Bool
 
-    init(isEditable: Bool, coffeeCollection: CoffeeCollection? = nil) {
+    init(isEditable: Bool, service: NetworkingService? = NetworkService()) {
         self.isEditable = isEditable
-        self.coffeeCollection = coffeeCollection ?? CoffeeCollection()
+        self.networkService = service
     }
 }
 

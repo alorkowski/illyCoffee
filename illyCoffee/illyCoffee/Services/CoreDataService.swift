@@ -25,8 +25,8 @@ final class CoreDataService {
     }
 }
 
-// MARK: - Methods
-extension CoreDataService {
+// MARK: - PersistenceService
+extension CoreDataService: PersistenceService {
     func save(_ coffee: Coffee) {
         guard !managedObjects.contains(where: { $0.urlAlias == coffee.urlAlias }) else { return }
         let favoriteCoffee = FavoriteCoffee(context: self.context)

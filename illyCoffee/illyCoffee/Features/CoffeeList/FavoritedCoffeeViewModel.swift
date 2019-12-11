@@ -1,14 +1,14 @@
 import Foundation
 
 final class FavoritedCoffeeViewModel: CoffeeCollectionManager {
-    private var coreDataService = CoreDataService.shared
-    var coffeeCollection: CoffeeCollection
+    private var coreDataService: PersistenceService!
+    var coffeeCollection = CoffeeCollection()
     var filteredCoffeeCollection = CoffeeCollection()
     var isEditable: Bool
 
-    init(isEditable: Bool, coffeeCollection: CoffeeCollection? = nil) {
+    init(isEditable: Bool, service: PersistenceService = CoreDataService.shared) {
         self.isEditable = isEditable
-        self.coffeeCollection = coffeeCollection ?? CoffeeCollection()
+        self.coreDataService = service
     }
 }
 

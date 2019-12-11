@@ -54,7 +54,7 @@ extension CoffeeDetailViewController {
     }
 }
 
-// MARK: @objc Methods
+// MARK: - @objc Methods
 extension CoffeeDetailViewController {
     @objc func saveCoffeeToFavorites() {
         self.coffeeDetailViewModel.addFavorite()

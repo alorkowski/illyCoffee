@@ -1,6 +1,6 @@
 import Foundation
 
-final class NetworkService {
+final class NetworkService: NetworkingService {
     func getLocalData<T: Decodable>(forResource fileName: String,
                                     ofType fileExtension: String,
                                     completion: @escaping (Result<T, NetworkError>) -> Void) {
